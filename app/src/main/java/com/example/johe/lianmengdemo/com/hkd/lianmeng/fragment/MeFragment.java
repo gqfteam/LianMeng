@@ -1,4 +1,4 @@
-package com.example.johe.lianmengdemo;
+package com.example.johe.lianmengdemo.com.hkd.lianmeng.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.example.johe.lianmengdemo.MyAdapter_me_listView;
+import com.example.johe.lianmengdemo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
