@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Homepage">首页</string>
+    <string name="Sale">义卖</string>
+    <string name="tools">工具</string>
+    <string name="User">我的</string>
+
 </resources>
