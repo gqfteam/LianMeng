@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="80dp"
+              android:orientation="horizontal">
+
+    <RadioGroup
+        android:id="@+id/rg_battlefield"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+
+        <RadioButton
+            android:id="@+id/schoolinfo_top_netteach_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_category_0"
+            android:gravity="center"
+            android:text="网络教学中心"
+            android:textColor="@color/blue"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:id="@+id/schoolinfo_top_zhxg_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_category_0"
+            android:gravity="center"
+            android:text="智慧学工"
+            android:textColor="@color/blue"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:id="@+id/schoolinfo_top_netservice_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_category_0"
+            android:gravity="center"
+            android:text="网络服务"
+            android:textColor="@color/blue"
+            android:textSize="14sp"/>
+        <RadioButton
+            android:id="@+id/schoolinfo_top_classrooom_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_category_0"
+            android:gravity="center"
+            android:text="空闲教室"
+            android:textColor="@color/blue"
+            android:textSize="14sp"/>
+        <RadioButton
+            android:id="@+id/schoolinfo_top_phone_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_category_0"
+            android:gravity="center"
+            android:text="办公电话"
+            android:textColor="@color/blue"
+            android:textSize="14sp"/>
+    </RadioGroup>
+
+</LinearLayout>
