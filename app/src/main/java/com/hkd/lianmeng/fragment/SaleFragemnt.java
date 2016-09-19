@@ -31,16 +31,6 @@ public class SaleFragemnt extends Fragment {
     @Bind(R.id.shop_fragment)
     FrameLayout shopFragment;//切换选择界面与加载商品信息
 
-    public SaleFragemnt() {
-        // Required empty public constructor
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
