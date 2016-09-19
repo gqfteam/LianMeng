@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hkd.lianmeng.fragment.SchoolInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blueColor"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp">
+        <TextView
+            android:id="@+id/schoolinfo_top_address_tv"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:text="洛阳"
+           />
+
+        <ImageView
+            android:id="@+id/schoolinfo_top_address_iv"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@mipmap/ic_action_map"/>
+        <com.hkd.lianmeng.view.SearchView
+            android:id="@+id/schoolinfo_top_search_sv"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:paddingBottom="1dp"
+            android:paddingTop="2dp">
+        </com.hkd.lianmeng.view.SearchView>
+
+        <ImageView
+            android:id="@+id/schoolinfo_top_qcord_iv"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/sweep_icon_selector"/>
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.hkd.lianmeng.view.CarouselView
+                android:id="@+id/schoolinfo_top_carousel_cv"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

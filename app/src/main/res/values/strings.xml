@@ -15,4 +15,8 @@
         <item>设置</item>
     </string-array>
 
+=======
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> 684b88b728a5fcef29ef60261352af79367bfe38
 </resources>

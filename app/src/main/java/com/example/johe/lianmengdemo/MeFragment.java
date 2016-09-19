@@ -39,27 +39,27 @@ public class MeFragment extends Fragment {
     private void init() {
         String[] _txt;
         _txt = getResources().getStringArray(R.array.me_listView_item);
-        int[] _img = {R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx};
+        int[] _img = {R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx};
         int _length = _txt.length;
-        mData = new ArrayList<HashMap<String,Object>>();
-        for (int i=0;i<_length;i++){
-            HashMap<String,Object> map =  new HashMap<String, Object>();
+        mData = new ArrayList<HashMap<String, Object>>();
+        for (int i = 0; i < _length; i++) {
+            HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("txt", _txt[i]);
             map.put("img", _img[i]);
             mData.add(map);
         }
         //配置自定义listview适配器MyAdapter_me_listView
         MyAdapter_me_listView listViewAdapter;
-        listViewAdapter = new MyAdapter_me_listView(mData,getActivity());
-        View hView = LayoutInflater.from(getActivity()).inflate(R.layout.me_list_head,null,false);
+        listViewAdapter = new MyAdapter_me_listView(mData, getActivity());
+        View hView = LayoutInflater.from(getActivity()).inflate(R.layout.me_list_head, null, false);
         listViewFregmentMe.addHeaderView(hView);
         listViewFregmentMe.setAdapter(listViewAdapter);
 
-    }
+        }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+        @Override
+        public void onDestroyView () {
+            super.onDestroyView();
+            ButterKnife.unbind(this);
+        }
     }
-}
