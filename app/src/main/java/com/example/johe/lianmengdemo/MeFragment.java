@@ -37,7 +37,8 @@ public class MeFragment extends Fragment {
      * 初始化数据函数
      */
     private void init() {
-        String[] _txt={"接受信息","买卖商品","联系客服","设置"};
+        String[] _txt;
+        _txt = getResources().getStringArray(R.array.me_listView_item);
         int[] _img = {R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx,R.mipmap.me_list_jsxx};
         int _length = _txt.length;
         mData = new ArrayList<HashMap<String,Object>>();

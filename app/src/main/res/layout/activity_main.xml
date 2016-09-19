@@ -11,7 +11,12 @@
     tools:context="com.example.johe.lianmengdemo.MainActivity">
 
     <TextView
+        android:id="@+id/mA_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
+    <fragment
+        android:id="@+id/mA_test_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </RelativeLayout>
