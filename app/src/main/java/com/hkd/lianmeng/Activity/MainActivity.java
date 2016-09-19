@@ -72,11 +72,12 @@ public class MainActivity extends FragmentActivity {
                     showFragment(mSaleFragemnt);
                 } else {
                     mSaleFragemnt = new SaleFragemnt();
-                    getSupportFragmentManager().beginTransaction()
+                           getSupportFragmentManager().beginTransaction()
                             .add(R.id.main_fragment, mSaleFragemnt).commit();
                 }
                 break;
             case R.id.Main_bottom_Tools_Rad:
+                ///dasdasda
                 break;
             case R.id.Main_bottom_User_Rad:
 
