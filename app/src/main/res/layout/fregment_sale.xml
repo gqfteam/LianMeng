@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/whitesmoke"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="2.4"
                 android:layout_height="match_parent"
-                android:text="淘个不停"
-                android:gravity="center_vertical"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_weight="2.4"
+                android:gravity="center_vertical"
+                android:text="淘个不停"
                 android:textSize="@dimen/super_txt_size"
                 />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5" />
+                android:layout_weight="1.5"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -38,7 +39,7 @@
                 android:background="?android:listChoiceBackgroundIndicator"
                 android:scaleX="0.55"
                 android:scaleY="0.55"
-                android:src="@drawable/ic_action_map" />
+                android:src="@drawable/ic_action_map"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -48,13 +49,13 @@
                 android:background="?android:listChoiceBackgroundIndicator"
                 android:scaleX="0.55"
                 android:scaleY="0.55"
-                android:src="@drawable/ic_action_search" />
+                android:src="@drawable/ic_action_search"/>
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.7dip"
-            android:background="@color/lightgray" />
+            android:background="@color/lightgray"/>
     </LinearLayout>
 
     <RadioGroup
@@ -62,43 +63,45 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/four_height_item"
         android:background="@color/ghostwhite"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <CheckBox
-            android:checked="false"
             android:id="@+id/CB_shop_university"
             style="@style/sale_top_rad"
-            android:text="河南科技大学" />
+            android:checked="false"
+            android:text="河南科技大学"/>
 
         <ImageView
             android:layout_width="0.5dip"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
-            android:src="@drawable/sale_top_line" />
+            android:src="@drawable/sale_top_line"/>
 
         <CheckBox
-            android:checked="false"
             android:id="@+id/CB_shop_campus"
             style="@style/sale_top_rad"
-            android:text="西苑校区" />
+            android:checked="false"
+            android:text="西苑校区"/>
+
         <ImageView
             android:layout_width="0.5dip"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
-            android:src="@drawable/sale_top_line" />
+            android:src="@drawable/sale_top_line"/>
 
         <CheckBox
-            android:checked="false"
             android:id="@+id/CB_shop_classification"
             style="@style/sale_top_rad"
-            android:text="书籍" />
-        <CheckBox
             android:checked="false"
+            android:text="书籍"/>
+
+        <CheckBox
             android:id="@+id/shop_off"
             android:layout_width="0.1dip"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:checked="false"/>
     </RadioGroup>
 
     <FrameLayout
