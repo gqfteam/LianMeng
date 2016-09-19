@@ -66,7 +66,7 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/CB_shop_university"
+            android:id="@+id/CB_shop_city"
             style="@style/sale_top_rad"
             android:checked="false"
             android:text="河南科技大学"/>
