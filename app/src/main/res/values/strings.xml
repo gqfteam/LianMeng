@@ -8,4 +8,11 @@
     <string name="tools">工具</string>
     <string name="User">我的</string>
 
+    <string-array name="me_listViewItem_strArray">
+        <item>接受信息</item>
+        <item>买卖商品</item>
+        <item>联系客服</item>
+        <item>设置</item>
+    </string-array>
+
 </resources>

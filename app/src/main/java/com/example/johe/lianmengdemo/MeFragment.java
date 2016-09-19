@@ -38,7 +38,7 @@ public class MeFragment extends Fragment {
      */
     private void init() {
         String[] _txt;
-        _txt = getResources().getStringArray(R.array.me_listView_item);
+        _txt = getResources().getStringArray(R.array.me_listViewItem_strArray);
         int[] _img = {R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx};
         int _length = _txt.length;
         mData = new ArrayList<HashMap<String, Object>>();
