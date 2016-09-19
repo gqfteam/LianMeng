@@ -8,7 +8,7 @@
         android:id="@+id/chose_two_item_img"
         android:layout_width="@dimen/four_height_item"
         android:layout_height="match_parent"
-        android:drawableRight="@drawable/ic_global_filter_check_green"
+        android:drawableRight="@mipmap/ic_global_filter_check_green"
         android:paddingRight="@dimen/one_margin_item"
         />
 

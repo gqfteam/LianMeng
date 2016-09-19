@@ -39,7 +39,7 @@
                 android:background="?android:listChoiceBackgroundIndicator"
                 android:scaleX="0.55"
                 android:scaleY="0.55"
-                android:src="@drawable/ic_action_map"/>
+                android:src="@mipmap/ic_action_map"/>
 
             <ImageView
                 android:layout_width="0dp"
@@ -49,7 +49,7 @@
                 android:background="?android:listChoiceBackgroundIndicator"
                 android:scaleX="0.55"
                 android:scaleY="0.55"
-                android:src="@drawable/ic_action_search"/>
+                android:src="@mipmap/ic_action_search"/>
         </LinearLayout>
 
         <View
@@ -76,7 +76,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
-            android:src="@drawable/sale_top_line"/>
+            android:src="@mipmap/sale_top_line"/>
 
         <CheckBox
             android:id="@+id/CB_shop_campus"
@@ -89,7 +89,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
-            android:src="@drawable/sale_top_line"/>
+            android:src="@mipmap/sale_top_line"/>
 
         <CheckBox
             android:id="@+id/CB_shop_classification"
