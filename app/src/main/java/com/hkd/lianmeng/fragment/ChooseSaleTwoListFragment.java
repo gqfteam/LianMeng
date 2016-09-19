@@ -10,6 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.adapter.ChooseSaleOneAdapter;
+import com.hkd.lianmeng.model.SaleChooseModel;
+import com.hkd.lianmeng.tools.ReadJson;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,6 +34,8 @@ public class ChooseSaleTwoListFragment extends Fragment {
     @Bind(R.id.chose_popu_back)
     View chosePopuBack;
     private int RadioBtnId = 1;
+    private ReadJson rj;
+    private ChooseSaleOneAdapter mChooseSaleOneAdapter;
 
     public void setRadioBtnId(int radioBtnId) {
         RadioBtnId = radioBtnId;
@@ -40,7 +47,20 @@ public class ChooseSaleTwoListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_choose_sale_two_list, container, false);
         ButterKnife.bind(this, view);
+        initList();
         return view;
+    }
+
+
+    public void initList(){
+        //读取json
+        String json=getActivity().getString(R.string.city_json);
+        rj=ReadJson.getInstance();
+        ArrayList<SaleChooseModel> datas=rj.readSaleTopChooseJson(json);
+
+        mChooseSaleOneAdapter=new ChooseSaleOneAdapter(getContext(),datas);
+        choseListViewOne.setAdapter(mChooseSaleOneAdapter);
+
     }
 
     @Override

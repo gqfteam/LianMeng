@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.model.SaleChooseModel;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
  */
 public class ChooseSaleOneAdapter extends BaseAdapter {
 
-    private ArrayList<String> datas;//数据源
+    private ArrayList<SaleChooseModel> datas;//数据源
     private Context mContext;
     private LayoutInflater layoutInflater;
     private ChooseSaleTwoAdapter mChooseSaleTwoAdapter;
@@ -31,12 +32,12 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
         mChooseSaleTwoAdapter = chooseSaleTwoAdapter;
     }
 
-    public void update(ArrayList<String> datas) {
+    public void update(ArrayList<SaleChooseModel> datas) {
         this.datas = datas;
         this.notifyDataSetChanged();
     }
 
-    public ChooseSaleOneAdapter(Context context, ArrayList<String> datas) {
+    public ChooseSaleOneAdapter(Context context, ArrayList<SaleChooseModel> datas) {
         this.mContext = context;
         this.datas = datas;
         this.layoutInflater = LayoutInflater.from(context);
@@ -73,7 +74,7 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
-
+        mHolder.choseItemMsg.setText(datas.get(arg0).getName());
         return arg1;
     }
 

@@ -15,7 +15,7 @@
             android:layout_weight="1"
             android:divider="@color/whitesmoke"
             android:layout_height="wrap_content"
-            android:background="@color/honeydew"
+            android:background="@color/white"
 
             />
         <ListView
