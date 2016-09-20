@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -45,9 +46,7 @@ public class MainActivity extends FragmentActivity {
 
     private void showFragment(Fragment index) {
         ft = getSupportFragmentManager().beginTransaction();
-        /*ft.show(shopFragment);
-        ft.hide(myInformationFragment);
-		ft.hide(homePageFragment);*/
+
         for (int i = 0; i < getSupportFragmentManager().getFragments().size(); i++) {
             Fragment f = getSupportFragmentManager().getFragments().get(i);
             if (f == index) {

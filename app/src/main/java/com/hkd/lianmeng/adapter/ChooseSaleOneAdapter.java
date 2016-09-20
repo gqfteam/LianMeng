@@ -25,12 +25,10 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
     private ArrayList<SaleChooseModel> datas;//数据源
     private Context mContext;
     private LayoutInflater layoutInflater;
-    private ChooseSaleTwoAdapter mChooseSaleTwoAdapter;
+
     private ViewHolder mHolder;
 
-    public void setChooseSaleTwoAdapter(ChooseSaleTwoAdapter chooseSaleTwoAdapter) {
-        mChooseSaleTwoAdapter = chooseSaleTwoAdapter;
-    }
+
 
     public void update(ArrayList<SaleChooseModel> datas) {
         this.datas = datas;
@@ -75,6 +73,9 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
             mHolder = (ViewHolder) arg1.getTag();
         }
         mHolder.choseItemMsg.setText(datas.get(arg0).getName());
+
+
+
         return arg1;
     }
 

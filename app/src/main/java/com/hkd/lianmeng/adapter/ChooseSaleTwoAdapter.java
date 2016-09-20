@@ -67,7 +67,8 @@ public class ChooseSaleTwoAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
-
+        mHolder.choseTwoItemTxt.setText(datas.get(arg0)+"");
+        mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
         return arg1;
     }
 
