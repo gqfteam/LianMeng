@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
 
@@ -28,6 +29,7 @@ public class MainActivity extends FragmentActivity {
     private FragmentTransaction ft;
     private SaleFragemnt mSaleFragemnt;
     private SchoolInfoFragment mSchoolInfoFragment;
+    private MeFragment mMeFragment;
 
 
     @Override
@@ -78,7 +80,12 @@ public class MainActivity extends FragmentActivity {
 
                 break;
             case R.id.Main_bottom_User_Rad:
-
+                if (mMeFragment != null) {
+                    showFragment(mMeFragment);
+                } else {
+                    mMeFragment = new MeFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.main_fragment,mMeFragment).commit();
+                }
                 break;
         }
     }
