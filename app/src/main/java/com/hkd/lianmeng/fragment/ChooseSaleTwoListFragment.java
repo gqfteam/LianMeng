@@ -44,6 +44,9 @@ public class ChooseSaleTwoListFragment extends Fragment {
     public void setRadioBtnId(int radioBtnId) {
         RadioBtnId = radioBtnId;
         if(view!=null) {
+            if(mChooseSaleTwoAdapter!=null){
+                mChooseSaleTwoAdapter.update(null);
+            }
             initList(RadioBtnId);
         }
     }
