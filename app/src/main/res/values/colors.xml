@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
 
-    <color name="homebottomColor">#666666</color><!--首页底部按钮和字体的灰色-->
+    <color name="homebottomColor">#666666</color><!--底部按钮和字体的灰色-->
     <color name="lightBlueColor">#00CCFF</color>
     <color name="blueColor">#3298F6</color>
     <color name="darkBlueColor">#0066FF</color>
