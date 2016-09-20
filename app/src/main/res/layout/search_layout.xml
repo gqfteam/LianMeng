@@ -10,8 +10,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_search_corners_bg"
         android:orientation="horizontal">
-
-
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -22,17 +20,18 @@
             <EditText
                 android:id="@+id/search_et_input"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/four_height_item"
+                android:layout_height="44dp"
                 android:layout_gravity="center_vertical"
-                android:background="@color/white"
+                android:layout_marginLeft="@dimen/one_margin_item"
+                android:background="@drawable/searchview_shape"
                 android:drawableLeft="@mipmap/ic_action_search"
                 android:drawablePadding="10dp"
                 android:hint="搜索"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:textColor="@color/blueColor"
-                android:textColorHint="@color/blueColor"
-                android:textSize="16sp"/>
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/small_txt_size"/>
 
             <ImageView
                 android:id="@+id/search_iv_delete"
@@ -43,8 +42,6 @@
                 android:src="@drawable/iv_delete_bg"
                 android:visibility="gone"/>
         </FrameLayout>
-
-
     </LinearLayout>
 
     <ListView

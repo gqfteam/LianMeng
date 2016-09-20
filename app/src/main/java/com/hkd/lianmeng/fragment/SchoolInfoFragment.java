@@ -2,6 +2,7 @@ package com.hkd.lianmeng.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,13 @@ import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.constant.Constant;
+import com.hkd.lianmeng.model.Sentence;
 import com.hkd.lianmeng.view.CarouselView;
 import com.hkd.lianmeng.view.SearchView;
+import com.hkd.lianmeng.view.VerticalScrollTextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,7 +27,7 @@ import butterknife.OnClick;
 
 
 public class SchoolInfoFragment extends Fragment {
-
+    View mview;
     @Bind(R.id.schoolinfo_top_address_tv)
     TextView schoolinfoTopAddressTv;
     @Bind(R.id.schoolinfo_top_address_iv)
@@ -56,15 +62,18 @@ public class SchoolInfoFragment extends Fragment {
     RadioButton schoolinfoTopLixiaoRb;
     @Bind(R.id.schoolinfo_top_radiogroup_rg)
     RadioGroup schoolinfoTopRadiogroupRg;
-
+   /* @Bind(R.id.schoolinfo_moddle_newslist_vstv)*/
+    VerticalScrollTextView mNewListVerticalScrollTextView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_school_info, container, false);
-        ButterKnife.bind(this, view);
+         mview = inflater.inflate(R.layout.fragment_school_info, container, false);
+        ButterKnife.bind(this, mview);
+        mNewListVerticalScrollTextView= (VerticalScrollTextView) mview.findViewById(R.id.schoolinfo_moddle_newslist_vstv);
         initDatas();
-        return view;
+        initNewsList();
+        return mview;
 
     }
 
@@ -115,5 +124,26 @@ public class SchoolInfoFragment extends Fragment {
             case R.id.schoolinfo_top_radiogroup_rg:
                 break;
         }
+    }
+
+    public void initNewsList(){
+
+        List lst=new ArrayList<Sentence>();
+        for(int i=0;i<30;i++){
+
+            if(i%2==0){
+                Sentence sen=new Sentence(i,i+"、金球奖三甲揭晓 C罗梅西哈维入围 ");
+                lst.add(i, sen);
+            }else{
+                Sentence sen=new Sentence(i,i+"、公牛欲用三大主力换魔兽？？？？");
+                lst.add(i, sen);
+            }
+        }
+        //给View传递数据
+        Log.d("TAG",mNewListVerticalScrollTextView+"---"+lst);
+
+        mNewListVerticalScrollTextView.setList(lst);
+        //更新View
+        mNewListVerticalScrollTextView.updateUI();//*
     }
 }
