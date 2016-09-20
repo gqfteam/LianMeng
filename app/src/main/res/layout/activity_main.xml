@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.hkd.lianmeng.Activity.MainActivity">
+
     <FrameLayout
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"
@@ -46,5 +47,6 @@
             style="@style/main_bottom_rad_function"
             android:drawableTop="@drawable/home_bottom_my_pic_selector"
             android:text="@string/User" />
+
     </RadioGroup>
 </LinearLayout>
