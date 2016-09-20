@@ -13,6 +13,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * gqf
+ * 义卖界面
+ */
 
 public class SaleFragemnt extends Fragment {
 

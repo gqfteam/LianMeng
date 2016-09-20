@@ -16,6 +16,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * gqf
+ * 主页面，加载主页，义卖，工具，我的fragment
+ */
+
+
 public class MainActivity extends FragmentActivity {
 
     @Bind(R.id.Main_bottom_HomePage_Rad)

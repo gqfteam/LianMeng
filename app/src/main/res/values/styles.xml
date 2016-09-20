@@ -7,7 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!--gqf-->
+    <!--义卖顶部rad按钮style-->
     <style name="sale_top_rad">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -20,7 +21,8 @@
         <item name="android:padding">10dp</item>
         <item name="android:background">?android:listChoiceBackgroundIndicator</item>
     </style>
-    
+    <!--gqf-->
+    <!--主界面底部四个rad按钮style-->
     <style name="main_bottom_rad_function">
         <item name="android:textSize">@dimen/medium_txt_size</item>
         <item name="android:layout_width">0dp</item>
@@ -44,7 +46,7 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
     </style>
-    
+
     <!--柳 界面中权值为1的纵向布局-->
     <style name="vertical_weight_1">
         <item name="android:layout_width">match_parent</item>
