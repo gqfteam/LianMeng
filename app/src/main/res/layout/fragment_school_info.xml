@@ -31,7 +31,8 @@
             android:background="@mipmap/ic_action_map1"/>
         <com.hkd.lianmeng.view.SearchView
             android:id="@+id/schoolinfo_top_search_sv"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="44dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
