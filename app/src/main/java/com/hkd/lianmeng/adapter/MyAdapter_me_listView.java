@@ -1,4 +1,4 @@
-package com.example.johe.lianmengdemo;
+package com.hkd.lianmeng.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.johe.lianmengdemo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
