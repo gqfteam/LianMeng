@@ -27,11 +27,11 @@
         <item name="android:layout_weight">1</item>
         <item name="android:button">@null</item>
         <item name="android:checked">false</item>
-        <item name="android:textColor">@color/homebottomColor</item>
+        <item name="android:textColor">@color/color_redio_main_bottom</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:scaleX">0.8</item>
-        <item name="android:scaleY">0.8</item>
-        <item name="android:drawablePadding">@dimen/one_margin_item</item>
+        <item name="android:scaleX">0.7</item>
+        <item name="android:scaleY">0.7</item>
+
     </style>
     <style name="schoolinfo_top_grid_rb">
         <item name="android:textSize">@dimen/minimum_txt_size</item>

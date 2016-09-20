@@ -25,22 +25,21 @@
         <RadioButton
             android:id="@+id/Main_bottom_HomePage_Rad"
             style="@style/main_bottom_rad_function"
-            android:drawableTop="@mipmap/bottom_home_pic_off"
-            android:text="@string/Homepage"
-            android:checked="false"/>
+            android:drawableTop="@drawable/home_bottom_homepage_pic_selector"
+            android:text="@string/Homepage"/>
 
         <RadioButton
             android:id="@+id/Main_bottom_Sale_Rad"
             style="@style/main_bottom_rad_function"
-            android:drawableTop="@mipmap/bottom_tools_pic_off"
+            android:drawableTop="@drawable/home_bottom_bazar_pic_selecter"
 
-            android:text="@string/tools" />
+            android:text="@string/Sale" />
 
         <RadioButton
             android:id="@+id/Main_bottom_Tools_Rad"
             style="@style/main_bottom_rad_function"
-            android:drawableTop="@drawable/home_bottom_bazar_pic_selecter"
-            android:text="@string/Sale" />
+            android:drawableTop="@drawable/home_bottom_tools_pic_selector"
+            android:text="@string/tools" />
 
         <RadioButton
             android:id="@+id/Main_bottom_User_Rad"
