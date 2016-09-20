@@ -16,6 +16,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by johe on 2016/9/19.
+ * gqf
+ * Salefragment顶部选择器右边list
  */
 public class ChooseSaleTwoAdapter extends BaseAdapter {
 

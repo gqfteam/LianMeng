@@ -8,47 +8,50 @@
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@android:dimen/app_icon_size"
         android:background="@color/blueColor"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="8dp">
         <TextView
             android:id="@+id/schoolinfo_top_address_tv"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/four_height_item"
+            android:layout_height="@dimen/four_height_item"
             android:gravity="center"
             android:layout_gravity="center_vertical"
             android:textSize="@dimen/small_txt_size"
+            android:textColor="@color/white"
             android:text="洛阳"
            />
 
         <ImageView
             android:id="@+id/schoolinfo_top_address_iv"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/five_height_item"
+            android:layout_height="@dimen/five_height_item"
             android:layout_gravity="center_vertical"
             android:background="@mipmap/ic_action_map1"/>
         <com.hkd.lianmeng.view.SearchView
             android:id="@+id/schoolinfo_top_search_sv"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="44dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:paddingBottom="1dp"
-            android:paddingTop="2dp">
+            android:layout_height="@dimen/four_height_item"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/one_margin_item"
+            android:paddingTop="@dimen/one_margin_item">
         </com.hkd.lianmeng.view.SearchView>
 
         <ImageView
         android:id="@+id/schoolinfo_top_qcord_iv"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="@dimen/five_height_item"
+        android:layout_height="@dimen/five_height_item"
         android:background="@mipmap/actionbar_icon_scan"/>
         <ImageView
             android:id="@+id/schoolinfo_top_chat_iv"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_marginLeft="@dimen/one_margin_item"
+            android:layout_marginRight="@dimen/one_margin_item"
+            android:layout_width="@dimen/five_height_item"
+            android:layout_height="@dimen/five_height_item"
             android:background="@mipmap/actionbar_icon_scan"/>
 
     </LinearLayout>
@@ -62,12 +65,12 @@
             <com.hkd.lianmeng.view.CarouselView
                 android:id="@+id/schoolinfo_top_carousel_cv"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"/>
+                android:layout_height="@dimen/max_height_item"/>
             <include android:id="@+id/schoolinfo_top_gridview_include"
                 layout="@layout/schoolinfo_radiogroup"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/max_height_item"
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/schoolinfo_top_netliaoyuan_iv"
@@ -76,28 +79,32 @@
                     android:layout_height="match_parent"
                     android:background="@mipmap/liaoyuanwang"
                     />
-
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/two_margin_item"
                     android:layout_weight="1">
                     <ImageView
                         android:id="@+id/schoolinfo_top_netliangxueyizuo_iv"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="@dimen/twoandthree_height_item"
                         android:background="@mipmap/liangxueyizuo"
                         android:layout_marginBottom="@dimen/two_margin_item"
                         />
                     <ImageView
                         android:id="@+id/schoolinfo_top_netsanyansanshi_iv"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_below="@id/schoolinfo_top_netliangxueyizuo_iv"
+                        android:layout_alignParentBottom="true"
+                        android:layout_height="@dimen/twoandthree_height_item" android:layout_below="@id/schoolinfo_top_netliangxueyizuo_iv"
                         android:background="@mipmap/sanyansanshi"
                         />
 
                 </RelativeLayout>
             </LinearLayout>
+
+
+            <include android:id="@+id/schoolinfo_moddle_newslist_include"
+                layout="@layout/schoolinfo_verticalscrolltextview"/>
 
 
         </LinearLayout>

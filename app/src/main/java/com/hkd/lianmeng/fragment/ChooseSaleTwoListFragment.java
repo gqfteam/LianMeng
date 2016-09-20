@@ -24,6 +24,8 @@ import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
+ * gqf
+ * Salefragment顶部条件选择器界面，含有两个list联动
  */
 public class ChooseSaleTwoListFragment extends Fragment {
 

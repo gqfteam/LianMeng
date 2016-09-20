@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Created by johe on 2016/9/19.
+ * gqf
+ * 义卖顶部条件选择器条件模型
  */
 public class SaleChooseModel {
     String name;
