@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,15 +52,20 @@ public class MyAdapter_me_listView extends BaseAdapter {
         } else {
             _holder = (ViewHolder) view.getTag();
         }
+        _holder.meLeftIconImg.setImageResource((Integer) mData.get(i).get("img"));
+        _holder.meMiddleLabelTxt.setText(mData.get(i).get("txt").toString());
+        _holder.meRightInImg.setImageResource(R.mipmap.a);
 
         return view;
     }
 
     static class ViewHolder {
-        @Bind(R.id.img_JSXX_me_list_itme_me_list_itme)
-        ImageView imgJSXXMeListItmeMeListItme;
-        @Bind(R.id.img_A_me_list_item)
-        ImageView imgAMeListItem;
+        @Bind(R.id.me_left_icon_img)
+        ImageView meLeftIconImg;
+        @Bind(R.id.me_middle_label_txt)
+        TextView meMiddleLabelTxt;
+        @Bind(R.id.me_right_in_img)
+        ImageView meRightInImg;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

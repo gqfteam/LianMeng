@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/me_list_tx"
+            android:src="@mipmap/me_list_tx"
             android:layout_marginLeft="@dimen/four_margin_item"
             android:id="@+id/imageView"/>
         <LinearLayout
@@ -43,15 +43,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/b"
+            android:src="@mipmap/b"
             android:layout_marginLeft="@dimen/four_margin_item"
-            android:id="@+id/imageView"/>
+            />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/a"
             android:layout_marginLeft="@dimen/four_margin_item"
-            android:id="@+id/imageView"/>
+            />
 
     </LinearLayout>
 

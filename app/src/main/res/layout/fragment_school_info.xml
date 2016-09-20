@@ -1,8 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hkd.lianmeng.fragment.SchoolInfoFragment">
+    android:orientation="vertical"
+   >
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -18,6 +19,7 @@
             android:layout_height="36dp"
             android:gravity="center"
             android:layout_gravity="center_vertical"
+            android:textSize="@dimen/small_txt_size"
             android:text="洛阳"
            />
 
@@ -25,23 +27,29 @@
             android:id="@+id/schoolinfo_top_address_iv"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@mipmap/ic_action_map"/>
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/ic_action_map1"/>
         <com.hkd.lianmeng.view.SearchView
             android:id="@+id/schoolinfo_top_search_sv"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="44dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:paddingBottom="1dp"
             android:paddingTop="2dp">
         </com.hkd.lianmeng.view.SearchView>
 
         <ImageView
-            android:id="@+id/schoolinfo_top_qcord_iv"
+        android:id="@+id/schoolinfo_top_qcord_iv"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@mipmap/actionbar_icon_scan"/>
+        <ImageView
+            android:id="@+id/schoolinfo_top_chat_iv"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:background="@drawable/sweep_icon_selector"/>
-
+            android:background="@mipmap/actionbar_icon_scan"/>
 
     </LinearLayout>
     <ScrollView
@@ -49,11 +57,48 @@
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <com.hkd.lianmeng.view.CarouselView
                 android:id="@+id/schoolinfo_top_carousel_cv"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"/>
+            <include android:id="@+id/schoolinfo_top_gridview_include"
+                layout="@layout/schoolinfo_radiogroup"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/schoolinfo_top_netliaoyuan_iv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/liaoyuanwang"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/schoolinfo_top_netliangxueyizuo_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@mipmap/liangxueyizuo"
+                        android:layout_marginBottom="@dimen/two_margin_item"
+                        />
+                    <ImageView
+                        android:id="@+id/schoolinfo_top_netsanyansanshi_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_below="@id/schoolinfo_top_netliangxueyizuo_iv"
+                        android:background="@mipmap/sanyansanshi"
+                        />
+
+                </RelativeLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -61,4 +106,4 @@
 
 
 
-</FrameLayout>
+</LinearLayout>

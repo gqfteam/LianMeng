@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/me_list_jsxx"
             android:layout_marginLeft="@dimen/four_margin_item"
-            android:id="@+id/img_JSXX_me_list_itme_me_list_itme"/>
+            android:id="@+id/me_left_icon_img"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="接受信息"
                 android:textSize="@dimen/big_txt_size"
+                android:id="@+id/me_middle_label_txt"
                 />
 
         </LinearLayout>
@@ -39,7 +40,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/a"
             android:layout_marginLeft="@dimen/four_margin_item"
-            android:id="@+id/img_A_me_list_item"/>
+            android:id="@+id/me_right_in_img"/>
 
     </LinearLayout>
 
