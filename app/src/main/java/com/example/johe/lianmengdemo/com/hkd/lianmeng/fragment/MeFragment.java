@@ -10,6 +10,9 @@ import android.widget.ListView;
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.adapter.MyAdapter_me_listView;
 
+import com.example.johe.lianmengdemo.MyAdapter_me_listView;
+import com.example.johe.lianmengdemo.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

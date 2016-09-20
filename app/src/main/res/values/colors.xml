@@ -5,10 +5,12 @@
     <color name="colorAccent">#FF4081</color>
 
 
+    <color name="homebottomColor">#666666</color><!--首页底部按钮和字体的灰色-->
     <color name="lightBlueColor">#00CCFF</color>
     <color name="blueColor">#3298F6</color>
     <color name="darkBlueColor">#0066FF</color>
 
+    <color name="translucentWhite">#50ffffff</color> <!-- 半透明白色 -->
     <color name="white">#ffffff</color> <!-- 白色 -->
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->
     <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->
