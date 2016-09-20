@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-    <!-- 1080*1920 480dpi. -->
+    <!-- 1080*1920 420dpi. -->
     <!-- textsize -->
     <dimen name="super_txt_size">20sp</dimen>
     <dimen name="big_txt_size">18sp</dimen>

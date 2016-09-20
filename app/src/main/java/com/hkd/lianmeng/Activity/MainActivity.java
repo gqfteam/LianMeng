@@ -8,12 +8,19 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+/**
+ * gqf
+ * 主页面，加载主页，义卖，工具，我的fragment
+ */
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -28,6 +35,7 @@ public class MainActivity extends FragmentActivity {
     private FragmentTransaction ft;
     private SaleFragemnt mSaleFragemnt;
     private SchoolInfoFragment mSchoolInfoFragment;
+    private MeFragment mMeFragment;
 
 
     @Override
@@ -45,9 +53,7 @@ public class MainActivity extends FragmentActivity {
 
     private void showFragment(Fragment index) {
         ft = getSupportFragmentManager().beginTransaction();
-        /*ft.show(shopFragment);
-        ft.hide(myInformationFragment);
-		ft.hide(homePageFragment);*/
+
         for (int i = 0; i < getSupportFragmentManager().getFragments().size(); i++) {
             Fragment f = getSupportFragmentManager().getFragments().get(i);
             if (f == index) {
@@ -77,10 +83,15 @@ public class MainActivity extends FragmentActivity {
                 }
                 break;
             case R.id.Main_bottom_Tools_Rad:
-                ///dasdasda
+
                 break;
             case R.id.Main_bottom_User_Rad:
-
+                if (mMeFragment != null) {
+                    showFragment(mMeFragment);
+                } else {
+                    mMeFragment = new MeFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.main_fragment,mMeFragment).commit();
+                }
                 break;
         }
     }

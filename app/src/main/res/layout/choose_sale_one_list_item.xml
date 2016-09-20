@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--gqf-->
+<!--义卖顶部条件选择器左边listitem-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/sale_chose_item_one_lin"
               android:layout_width="match_parent"

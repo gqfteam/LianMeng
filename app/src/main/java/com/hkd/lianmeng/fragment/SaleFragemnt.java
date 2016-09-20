@@ -13,6 +13,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * gqf
+ * 义卖界面
+ */
 
 public class SaleFragemnt extends Fragment {
 
@@ -25,7 +29,7 @@ public class SaleFragemnt extends Fragment {
     @Bind(R.id.CB_shop_classification)
     CheckBox CBShopClassification;
 
-
+    private SaleListFragment mSaleListFragment;
     private ChooseSaleTwoListFragment mChooseSaleTwoListFragment;
 
     @Override
@@ -37,6 +41,9 @@ public class SaleFragemnt extends Fragment {
         CBShopCampus.setChecked(false);
         CBShopClassification.setChecked(false);
         CBShopCity.setChecked(false);
+        mSaleListFragment=new SaleListFragment();
+        getChildFragmentManager().beginTransaction()
+                .add(R.id.sale_bottom_fragment,mSaleListFragment).commit();
         return view;
     }
 
@@ -79,7 +86,6 @@ public class SaleFragemnt extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.CB_shop_city:
-
 
                 CBShopCampus.setChecked(false);
                 CBShopClassification.setChecked(false);

@@ -1,12 +1,16 @@
-package com.example.johe.lianmengdemo;
+package com.hkd.lianmeng.fragment;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.adapter.MyAdapter_me_listView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +43,7 @@ public class MeFragment extends Fragment {
     private void init() {
         String[] _txt;
         _txt = getResources().getStringArray(R.array.me_listViewItem_strArray);
-        int[] _img = {R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx, R.mipmap.me_list_jsxx};
+        int[] _img = {R.mipmap.me_list_jsxx, R.mipmap.me_list_mmsp, R.mipmap.me_list_lxkf, R.mipmap.me_list_sz};
         int _length = _txt.length;
         mData = new ArrayList<HashMap<String, Object>>();
         for (int i = 0; i < _length; i++) {
