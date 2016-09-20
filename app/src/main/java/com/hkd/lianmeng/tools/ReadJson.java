@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 /**
  * Created by johe on 2016/9/19.
+ * gqf
+ * 用来解析Json为model
  */
 public class ReadJson {
     private static class holder {
@@ -23,6 +25,12 @@ public class ReadJson {
         return holder.rj;
     }
 
+    /**
+     * gqf
+     * 解析义卖界面顶部条件JSon
+     * @param json
+     * @return
+     */
     public ArrayList<SaleChooseModel> readSaleTopChooseJson(String json) {
 
         ArrayList<SaleChooseModel> scms = new ArrayList<SaleChooseModel>();

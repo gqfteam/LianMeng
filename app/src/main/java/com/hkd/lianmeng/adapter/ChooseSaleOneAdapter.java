@@ -19,6 +19,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by johe on 2016/9/19.
+ * gqf
+ * Salefragment顶部条件选择器左边列表
  */
 public class ChooseSaleOneAdapter extends BaseAdapter {
 
