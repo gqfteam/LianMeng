@@ -22,9 +22,9 @@
 
     <ListView
         android:id="@+id/listView_fregment_me"
-        android:background="@color/white"
-        android:dividerHeight="@dimen/two_margin_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+
+        />
 
 </LinearLayout>
