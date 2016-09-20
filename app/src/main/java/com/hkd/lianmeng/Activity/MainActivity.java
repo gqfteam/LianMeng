@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -76,7 +75,7 @@ public class MainActivity extends FragmentActivity {
                 }
                 break;
             case R.id.Main_bottom_Tools_Rad:
-                ///dasdasda
+
                 break;
             case R.id.Main_bottom_User_Rad:
 
