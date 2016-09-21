@@ -71,6 +71,20 @@
         <item name="android:textSize">@dimen/big_txt_size</item>
         <item name="android:drawablePadding">@dimen/one_margin_item</item>
     </style>
+    <!--jyq-->
+    <!--义卖顶部rad按钮style-->
+
+    <style name="signinList_top_rad">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_redio_black_blue</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!--jyq-->
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

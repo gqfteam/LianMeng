@@ -4,12 +4,58 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
     <!-- top切换 -->
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/blueColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@mipmap/ic_comment_photo_browser_back"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+        <RadioGroup
+            android:layout_width="@dimen/max_height_item"
+            android:layout_height="@dimen/five_height_item"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/contact_top_radgrop_shap"
+            android:gravity="center_vertical"
 
-    </LinearLayout>
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/contact_top_msg_rad"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/contact_top_rad_left"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="临时"
+                android:textColor="@color/color_redio_blue_white"
+                android:textSize="@dimen/small_txt_size"/>
+            <RadioButton
+                android:id="@+id/contact_top_friend_rad"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/contact_top_rad_right"
+                android:button="@null"
+                android:gravity="center"
+                android:text="日常"
+                android:textColor="@color/color_redio_blue_white"
+                android:textSize="@dimen/small_txt_size"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@mipmap/signinlist_edit"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
     <!-- 内容部分碎片 -->
 </LinearLayout>
