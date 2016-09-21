@@ -97,6 +97,7 @@
             android:orientation="horizontal" >
 
             <Button
+                android:id="@+id/login_botton_register_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/two_margin_item"
@@ -112,6 +113,7 @@
                 android:textSize="@dimen/big_txt_size" />
 
             <Button
+                android:id="@+id/login_botton_login_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/two_margin_item"

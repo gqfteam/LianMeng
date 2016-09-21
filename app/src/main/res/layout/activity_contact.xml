@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--gqf-->
+<!--通讯录界面-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
+              android:orientation="vertical"
               android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,30 +21,37 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:background="@color/blueColor"
-            android:paddingLeft="@dimen/one_margin_item"
-            android:paddingRight="@dimen/one_margin_item"
+            android:background="@drawable/contact_top_radgrop_shap"
+
             android:orientation="horizontal">
             <RadioButton
-                android:background="@drawable/contact_top_radlift_shap"
+                android:id="@+id/contact_top_msg_rad"
+                android:background="@drawable/contact_top_rad_left"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:text="消息"
+                android:checked="true"
                 android:gravity="center"
                 android:textSize="@dimen/small_txt_size"
-                android:textColor="@color/white"
+                android:textColor="@color/color_redio_blue_white"
                 android:layout_height="match_parent"/>
             <RadioButton
-                android:background="@drawable/contact_top_radright_shap"
+                android:id="@+id/contact_top_friend_rad"
+                android:background="@drawable/contact_top_rad_right"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:text="联系人"
                 android:gravity="center"
                 android:textSize="@dimen/small_txt_size"
-                android:textColor="@color/blueColor"
+                android:textColor="@color/color_redio_blue_white"
                 android:layout_height="match_parent"/>
         </RadioGroup>
     </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/contact_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

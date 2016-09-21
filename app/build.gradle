@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            //jni库的调用会到资源文件夹下libs里面找so文件
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -25,6 +31,7 @@ dependencies {
     compile project(':library-1.0.19')
     compile files('libs/butterknife-7.0.1.jar')
     compile files('libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/hyphenatechat_3.1.5.jar')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
 }
