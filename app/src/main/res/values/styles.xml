@@ -46,4 +46,25 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
+    <!--柳 界面中权值为1的纵向布局-->
+    <style name="vertical_weight_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!--柳 界面中权值为1的横向布局-->
+    <style name="horizontal_weight_1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!--柳 工具页面几个按钮图片和文字的布局方式-->
+    <style name="toolspage_btn_picandtext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/big_txt_size</item>
+        <item name="android:drawablePadding">@dimen/one_margin_item</item>
+    </style>
 </resources>
