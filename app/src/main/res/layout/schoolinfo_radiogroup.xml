@@ -22,32 +22,32 @@
                 android:id="@+id/schoolinfo_top_netteach_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="网络教学中心" />
+                android:text="@string/schoolinfo_net_teaching" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_zhxg_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="智慧学工" />
+                android:text="@string/schoolinfo_wisdom_teaching_engineering" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_netservice_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
                 android:gravity="center"
-                android:text="网络服务" />
+                android:text="@string/schoolinfo_net_service" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_classrooom_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="空闲教室" />
+                android:text="@string/schoolinfo_free_classroom" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_phone_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="办公电话" />
+                android:text="@string/schoolinfo_office_phone" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,32 +60,32 @@
                 android:id="@+id/schoolinfo_top_classinfo_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="课表信息" />
+                android:text="@string/schoolinfo_classinfo" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_scoresearch_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="成绩查询" />
+                android:text="@string/schoolinfo_score_search" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_yikatongfuwu_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
                 android:gravity="center"
-                android:text="一卡通服务" />
+                android:text="@string/schoolinfo_card_service" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_xiaoli_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="校历" />
+                android:text="@string/schoolinfo_calendar" />
 
             <RadioButton
                 android:id="@+id/schoolinfo_top_lixiao_rb"
                 style="@style/schoolinfo_top_grid_rb"
                 android:drawableTop="@mipmap/ic_category_0"
-                android:text="离校手续" />
+                android:text="@string/schoolinfo_graduation_procedures" />
         </LinearLayout>
     </RadioGroup>
 

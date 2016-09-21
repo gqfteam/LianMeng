@@ -13,6 +13,8 @@
     <dimen name="minimum_txt_size">12sp</dimen>
 
     <!-- dimen -->
+    <dimen name="xxmax_height_item">240dp</dimen>
+    <dimen name="xmax_height_item">200dp</dimen>
     <dimen name="max_height_item">160dp</dimen>
     <dimen name="one_height_item">100dp</dimen>
     <dimen name="two_height_item">80dp</dimen>
