@@ -26,5 +26,6 @@
     <dimen name="two_margin_item">10dp</dimen>
     <dimen name="three_margin_item">15dp</dimen>
     <dimen name="four_margin_item">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

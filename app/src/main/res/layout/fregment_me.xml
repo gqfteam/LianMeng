@@ -16,15 +16,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/big_txt_size"/>
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView_fregment_me"
-        android:background="@color/white"
-        android:dividerHeight="@dimen/two_margin_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+
+        />
 
 </LinearLayout>

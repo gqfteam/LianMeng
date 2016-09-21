@@ -3,12 +3,16 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/white"
               >
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/two_margin_item"
+        android:paddingLeft="@dimen/two_margin_item"
+        android:paddingRight="@dimen/two_margin_item"
+        android:paddingTop="@dimen/one_margin_item"
+        android:paddingBottom="@dimen/one_margin_item"
         >
 
         <ImageView
@@ -30,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="接受信息"
-                android:textSize="@dimen/big_txt_size"
+                android:textSize="@dimen/medium_txt_size"
                 android:id="@+id/me_middle_label_txt"
                 />
 

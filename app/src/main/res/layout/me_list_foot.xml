@@ -9,16 +9,19 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="@dimen/two_margin_item"
+        android:paddingTop="@dimen/one_margin_item"
+        android:paddingBottom="@dimen/one_margin_item"
+        android:paddingLeft="@dimen/two_margin_item"
+        android:paddingRight="@dimen/two_margin_item"
+
         >
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_list_tx"
+            android:src="@mipmap/me_list_sz"
             android:layout_marginLeft="@dimen/four_margin_item"
-            android:id="@+id/imageView"/>
+            android:id="@+id/me_left_icon_img"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,29 +34,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="王久东"
-                android:textSize="@dimen/big_txt_size"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="学号：131451080122"
-                android:textSize="@dimen/small_txt_size"
+                android:text="设置"
+                android:textSize="@dimen/medium_txt_size"
+                android:id="@+id/me_middle_label_txt"
                 />
 
         </LinearLayout>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/b"
-            android:layout_marginLeft="@dimen/four_margin_item"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:src="@mipmap/a"
             android:layout_marginLeft="@dimen/four_margin_item"
-            />
+            android:id="@+id/me_right_in_img"/>
 
     </LinearLayout>
 
