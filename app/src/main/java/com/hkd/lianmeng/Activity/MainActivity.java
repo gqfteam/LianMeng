@@ -11,6 +11,7 @@ import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
+import com.hkd.lianmeng.fragment.ToolsFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,7 +37,7 @@ public class MainActivity extends FragmentActivity {
     private SaleFragemnt mSaleFragemnt;
     private SchoolInfoFragment mSchoolInfoFragment;
     private MeFragment mMeFragment;
-
+    private ToolsFragment mToolsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,13 @@ public class MainActivity extends FragmentActivity {
                 break;
             case R.id.Main_bottom_Tools_Rad:
 
+                if (mToolsFragment != null) {
+                    showFragment(mToolsFragment);
+                } else {
+                    mToolsFragment = new ToolsFragment();
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.main_fragment, mToolsFragment).commit();
+                }
                 break;
             case R.id.Main_bottom_User_Rad:
                 if (mMeFragment != null) {
