@@ -53,6 +53,7 @@ public class SettingListAdapter extends BaseAdapter {
             _holder = (ViewHolder) view.getTag();
         }
         _holder.settingListItemTxt.setText(_txt[i]);
+        _holder.settingListItemTxt.setTextColor(R.color.black);
         _holder.settingListItemImg.setImageResource(R.mipmap.a);
         return view;
     }

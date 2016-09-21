@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/big_txt_size"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/setting_back_img"/>
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="设置"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/big_txt_size"/>
     </RelativeLayout>
 

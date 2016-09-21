@@ -56,6 +56,7 @@ public class MeListAdapter extends BaseAdapter {
         }
         _holder.meLeftIconImg.setImageResource((Integer) mData.get(i).get("img"));
         _holder.meMiddleLabelTxt.setText(mData.get(i).get("txt").toString());
+        _holder.meMiddleLabelTxt.setTextColor(R.color.black);
         _holder.meRightInImg.setImageResource(R.mipmap.a);
 
 

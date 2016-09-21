@@ -13,6 +13,7 @@
         android:paddingBottom="@dimen/one_margin_item"
         android:paddingLeft="@dimen/two_margin_item"
         android:paddingRight="@dimen/two_margin_item"
+
         >
 
         <ImageView

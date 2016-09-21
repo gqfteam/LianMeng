@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/big_txt_size"/>
     </LinearLayout>
 
