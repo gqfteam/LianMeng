@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
+    gqf
+    登录界面
     <item android:drawable="@color/lightBlueColor" android:state_pressed="true"/>
     <item android:drawable="@color/white"/>
 

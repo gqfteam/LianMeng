@@ -53,6 +53,16 @@
                 android:scaleX="0.55"
                 android:scaleY="0.55"
                 android:src="@mipmap/ic_action_search"/>
+            <ImageView
+                android:id="@+id/sf_top_msg_img"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:adjustViewBounds="true"
+                android:background="?android:listChoiceBackgroundIndicator"
+                android:scaleX="0.55"
+                android:scaleY="0.55"
+                android:src="@mipmap/group_actionbar_message_icon"/>
         </LinearLayout>
 
         <View
