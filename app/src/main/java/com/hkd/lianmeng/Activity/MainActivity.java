@@ -1,5 +1,6 @@
 package com.hkd.lianmeng.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,6 +12,7 @@ import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
+import com.hkd.lianmeng.fragment.ToolsFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,7 +24,7 @@ import butterknife.OnClick;
  */
 
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements SaleFragemnt.mListener{
 
     @Bind(R.id.Main_bottom_HomePage_Rad)
     RadioButton MainBottomHomePageRad;
@@ -36,8 +38,8 @@ public class MainActivity extends FragmentActivity {
     private SaleFragemnt mSaleFragemnt;
     private SchoolInfoFragment mSchoolInfoFragment;
     private MeFragment mMeFragment;
-
-
+    private ToolsFragment mToolsFragment;
+    private Intent mIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +86,13 @@ public class MainActivity extends FragmentActivity {
                 break;
             case R.id.Main_bottom_Tools_Rad:
 
+                if (mToolsFragment != null) {
+                    showFragment(mToolsFragment);
+                } else {
+                    mToolsFragment = new ToolsFragment();
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.main_fragment, mToolsFragment).commit();
+                }
                 break;
             case R.id.Main_bottom_User_Rad:
                 if (mMeFragment != null) {
@@ -94,5 +103,12 @@ public class MainActivity extends FragmentActivity {
                 }
                 break;
         }
+    }
+    public void changeActivity(
+            @SuppressWarnings("rawtypes") Class activityClass){
+
+        mIntent=new Intent();
+        mIntent.setClass(MainActivity.this,activityClass);
+        startActivity(mIntent);
     }
 }

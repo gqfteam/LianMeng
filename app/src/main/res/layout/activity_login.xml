@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--gqf-->
+<!--登录界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eff2f6"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/em_welcom_logo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <RelativeLayout
+            android:id="@+id/rl_username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/three_height_item"
+            android:layout_marginLeft="@dimen/five_height_item"
+            android:layout_marginRight="@dimen/five_height_item"
+            android:background="@color/white" >
+
+            <ImageView
+                android:id="@+id/iv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/two_margin_item"
+                android:src="@mipmap/em_icon_account" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:hint="UserName"
+                android:paddingLeft="@dimen/two_margin_item"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="@dimen/big_txt_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/three_height_item"
+            android:layout_below="@id/rl_username"
+            android:layout_marginLeft="@dimen/five_height_item"
+            android:layout_marginRight="@dimen/five_height_item"
+            android:layout_marginTop="@dimen/two_margin_item"
+            android:background="@color/white" >
+
+            <ImageView
+                android:id="@+id/iv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/two_margin_item"
+                android:src="@mipmap/em_icon_pwd" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:hint="PassWord"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/two_margin_item"
+                android:singleLine="true"
+                android:textSize="@dimen/big_txt_size" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_password"
+            android:layout_marginLeft="@dimen/five_height_item"
+            android:layout_marginRight="@dimen/five_height_item"
+            android:layout_marginTop="@dimen/five_height_item"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/two_margin_item"
+                android:layout_marginRight="@dimen/two_margin_item"
+                android:layout_weight="1"
+                android:background="@drawable/em_button_register_bg"
+                android:gravity="center"
+                android:onClick="register"
+                android:paddingBottom="@dimen/one_margin_item"
+                android:paddingTop="@dimen/one_margin_item"
+                android:text="Register"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/big_txt_size" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/two_margin_item"
+                android:layout_marginRight="@dimen/two_margin_item"
+                android:layout_weight="1"
+                android:background="@drawable/em_button_login_bg"
+                android:gravity="center"
+                android:onClick="login"
+                android:paddingBottom="@dimen/one_margin_item"
+                android:paddingTop="@dimen/one_margin_item"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/big_txt_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
