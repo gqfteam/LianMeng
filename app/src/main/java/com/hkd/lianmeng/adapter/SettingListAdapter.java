@@ -10,33 +10,31 @@ import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * @author：Administrator on 2016/9/18 12:16
+ * @author：Administrator on 2016/9/20 17:33
  */
-public class MyAdapter_me_listView extends BaseAdapter {
+public class SettingListAdapter extends BaseAdapter {
     Context context;
-    ArrayList<HashMap<String, Object>> mData;
+    private String[] _txt;
 
-    public MyAdapter_me_listView(ArrayList<HashMap<String, Object>> pData, Context context) {
-        this.mData = pData;
+
+    public SettingListAdapter(Context context) {
         this.context = context;
-    }
+        _txt =context.getResources().getStringArray(R.array.setting_listViewItem_strArray);
 
+    }
 
     @Override
     public int getCount() {
-        return mData.size();
+        return _txt.length;
     }
 
     @Override
     public Object getItem(int i) {
-        return mData.get(i);
+        return _txt[i];
     }
 
     @Override
@@ -48,26 +46,24 @@ public class MyAdapter_me_listView extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder _holder;
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.me_list_item, null);
+            view = LayoutInflater.from(context).inflate(R.layout.setting_list_item, null);
             _holder = new ViewHolder(view);
             view.setTag(_holder);
         } else {
             _holder = (ViewHolder) view.getTag();
         }
-        _holder.meLeftIconImg.setImageResource((Integer) mData.get(i).get("img"));
-        _holder.meMiddleLabelTxt.setText(mData.get(i).get("txt").toString());
-        _holder.meRightInImg.setImageResource(R.mipmap.a);
-
+        _holder.settingListItemTxt.setText(_txt[i]);
+        _holder.settingListItemTxt.setTextColor(R.color.black);
+        _holder.settingListItemImg.setImageResource(R.mipmap.a);
         return view;
     }
 
+
     static class ViewHolder {
-        @Bind(R.id.me_left_icon_img)
-        ImageView meLeftIconImg;
-        @Bind(R.id.me_middle_label_txt)
-        TextView meMiddleLabelTxt;
-        @Bind(R.id.me_right_in_img)
-        ImageView meRightInImg;
+        @Bind(R.id.setting_listItem_txt)
+        TextView settingListItemTxt;
+        @Bind(R.id.setting_listItem_img)
+        ImageView settingListItemImg;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
