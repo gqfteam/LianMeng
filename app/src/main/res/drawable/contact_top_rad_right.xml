@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
- <item android:state_checked="true" android:drawable="@mipmap/ic_menu_deal_on" />
+ <item android:state_checked="true" android:drawable="@drawable/contact_top_radright_white_shap" />
  <item android:state_checked="false" 
-  android:drawable="@mipmap/ic_menu_deal_off"
+  android:drawable="@drawable/contact_top_radright_blue_shap"
   
   />
  

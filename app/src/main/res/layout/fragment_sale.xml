@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--gqf-->
+<!--义卖界面-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -50,6 +53,16 @@
                 android:scaleX="0.55"
                 android:scaleY="0.55"
                 android:src="@mipmap/ic_action_search"/>
+            <ImageView
+                android:id="@+id/sf_top_msg_img"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:adjustViewBounds="true"
+                android:background="?android:listChoiceBackgroundIndicator"
+                android:scaleX="0.55"
+                android:scaleY="0.55"
+                android:src="@mipmap/group_actionbar_message_icon"/>
         </LinearLayout>
 
         <View
@@ -58,24 +71,28 @@
             android:background="@color/lightgray"/>
     </LinearLayout>
 
-    <RadioGroup
+    <LinearLayout
         android:id="@+id/shop_rad_group"
         android:layout_width="match_parent"
         android:layout_height="@dimen/four_height_item"
-        android:background="@color/ghostwhite"
+        android:background="@color/whitesmoke"
         android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/CB_shop_city"
             style="@style/sale_top_rad"
             android:checked="false"
-            android:text="河南科技大学"/>
+            android:text="洛阳"
+
+            />
 
         <ImageView
             android:layout_width="0.5dip"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
+            android:adjustViewBounds="true"
+            android:scaleY="5"
             android:src="@mipmap/sale_top_line"/>
 
         <CheckBox
@@ -89,6 +106,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#ffffff"
+            android:adjustViewBounds="true"
+            android:scaleY="5"
             android:src="@mipmap/sale_top_line"/>
 
         <CheckBox
@@ -102,10 +121,10 @@
             android:layout_width="0.1dip"
             android:layout_height="match_parent"
             android:checked="false"/>
-    </RadioGroup>
+    </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/shop_fragment"
+        android:id="@+id/sale_bottom_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

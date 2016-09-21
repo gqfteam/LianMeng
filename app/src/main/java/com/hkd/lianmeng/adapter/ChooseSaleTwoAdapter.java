@@ -16,6 +16,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by johe on 2016/9/19.
+ * gqf
+ * Salefragment顶部选择器右边list
  */
 public class ChooseSaleTwoAdapter extends BaseAdapter {
 
@@ -67,7 +69,8 @@ public class ChooseSaleTwoAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
-
+        mHolder.choseTwoItemTxt.setText(datas.get(arg0)+"");
+        mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
         return arg1;
     }
 

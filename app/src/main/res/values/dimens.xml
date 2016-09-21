@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-    <!-- 1080*1920 480dpi. -->
+    <!-- 1080*1920 420dpi. -->
     <!-- textsize -->
     <dimen name="super_txt_size">20sp</dimen>
     <dimen name="big_txt_size">18sp</dimen>
@@ -13,9 +13,10 @@
     <dimen name="minimum_txt_size">12sp</dimen>
 
     <!-- dimen -->
+    <dimen name="max_height_item">160dp</dimen>
     <dimen name="one_height_item">100dp</dimen>
     <dimen name="two_height_item">80dp</dimen>
-
+    <dimen name="twoandthree_height_item">70dp</dimen>
     <dimen name="three_height_item">60dp</dimen>
     <dimen name="four_height_item">40dp</dimen>
     <dimen name="five_height_item">30dp</dimen>
@@ -25,5 +26,6 @@
     <dimen name="two_margin_item">10dp</dimen>
     <dimen name="three_margin_item">15dp</dimen>
     <dimen name="four_margin_item">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

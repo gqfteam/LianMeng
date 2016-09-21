@@ -1,5 +1,6 @@
 package com.hkd.lianmeng.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,14 +9,22 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
+import com.hkd.lianmeng.fragment.ToolsFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends FragmentActivity {
+/**
+ * gqf
+ * 主页面，加载主页，义卖，工具，我的fragment
+ */
+
+
+public class MainActivity extends FragmentActivity implements SaleFragemnt.mListener{
 
     @Bind(R.id.Main_bottom_HomePage_Rad)
     RadioButton MainBottomHomePageRad;
@@ -28,8 +37,9 @@ public class MainActivity extends FragmentActivity {
     private FragmentTransaction ft;
     private SaleFragemnt mSaleFragemnt;
     private SchoolInfoFragment mSchoolInfoFragment;
-
-
+    private MeFragment mMeFragment;
+    private ToolsFragment mToolsFragment;
+    private Intent mIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +55,7 @@ public class MainActivity extends FragmentActivity {
 
     private void showFragment(Fragment index) {
         ft = getSupportFragmentManager().beginTransaction();
-        /*ft.show(shopFragment);
-        ft.hide(myInformationFragment);
-		ft.hide(homePageFragment);*/
+
         for (int i = 0; i < getSupportFragmentManager().getFragments().size(); i++) {
             Fragment f = getSupportFragmentManager().getFragments().get(i);
             if (f == index) {
@@ -72,15 +80,35 @@ public class MainActivity extends FragmentActivity {
                     showFragment(mSaleFragemnt);
                 } else {
                     mSaleFragemnt = new SaleFragemnt();
-                    getSupportFragmentManager().beginTransaction()
+                           getSupportFragmentManager().beginTransaction()
                             .add(R.id.main_fragment, mSaleFragemnt).commit();
                 }
                 break;
             case R.id.Main_bottom_Tools_Rad:
+
+                if (mToolsFragment != null) {
+                    showFragment(mToolsFragment);
+                } else {
+                    mToolsFragment = new ToolsFragment();
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.main_fragment, mToolsFragment).commit();
+                }
                 break;
             case R.id.Main_bottom_User_Rad:
-
+                if (mMeFragment != null) {
+                    showFragment(mMeFragment);
+                } else {
+                    mMeFragment = new MeFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.main_fragment,mMeFragment).commit();
+                }
                 break;
         }
+    }
+    public void changeActivity(
+            @SuppressWarnings("rawtypes") Class activityClass){
+
+        mIntent=new Intent();
+        mIntent.setClass(MainActivity.this,activityClass);
+        startActivity(mIntent);
     }
 }
