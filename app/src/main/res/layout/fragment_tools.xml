@@ -17,7 +17,12 @@
        <RelativeLayout
           style="@style/vertical_weight_1"
            >
-
+           <com.hkd.lianmeng.view.CircleImageView
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:scaleType="centerInside"
+               android:src="@mipmap/tools_user_pic"
+               />
        </RelativeLayout>
        <LinearLayout
            style="@style/vertical_weight_1"
@@ -103,7 +108,7 @@
                    <TextView
                        android:layout_width="1dp"
                        android:layout_height="match_parent"
-                       android:background="#fff"
+                       android:background="@color/white"
                        />
                    <RelativeLayout
                        style="@style/horizontal_weight_1"
