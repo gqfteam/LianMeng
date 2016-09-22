@@ -31,6 +31,8 @@
     <string name="tools_ask_problem">问问</string>
     <string name="tools_other">更多</string>
     <string name="tools_score">成绩</string>
+    <string name="tools_user_nickname">微微一笑</string>
+    <string name="tools_user_class">软工132班</string>
 <!-- 春   首页 学校信息-->
     <string name="schoolinfo_net_teaching">网络教学中心</string>
     <string name="schoolinfo_wisdom_teaching_engineering">智慧学工</string>
