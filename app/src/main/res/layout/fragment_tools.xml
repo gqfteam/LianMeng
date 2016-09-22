@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.hkd.lianmeng.fragment.ToolsFragment">
 
-    <!-- 柳亚婷  工具类的页面 -->
+    <!-- 柳亚婷  工具类的页面   -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
