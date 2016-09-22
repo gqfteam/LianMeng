@@ -47,18 +47,15 @@ public class BaseApplication extends Application {
         // 默认的APP会在以包名为默认的process name下运行，如果查到的process name不是APP的process name就立即返回
 
         if (processAppName == null ||!processAppName.equalsIgnoreCase(applicationContext.getPackageName())) {
-            //Log.e(TAG, "enter the service process!");
 
             // 则此application::onCreate 是被service 调用的，直接返回
             return;
         }
-
-
         //初始化
         EMClient.getInstance().init(applicationContext, options);
         //在做打包混淆时，关闭debug模式，避免消耗不必要的资源
         EMClient.getInstance().setDebugMode(true);
-
+        //EaseUI.getInstance().init(applicationContext, options);
 
     }
     private String getAppName(int pID) {
