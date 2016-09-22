@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.adapter.FriendsListAdapter;
-import com.hkd.lianmeng.model.User;
+import com.hkd.lianmeng.model.UserFriend;
 import com.hkd.lianmeng.tools.DemoHelper;
 import com.hkd.lianmeng.view.SideBar;
 import com.hyphenate.chat.EMClient;
@@ -91,9 +91,11 @@ public class FriendListFragment extends Fragment {
         });
     }
     public void initList(List<String> usernames){
-        ArrayList<User> users=new ArrayList<>();
+        ArrayList<UserFriend> users=new ArrayList<>();
         for(int i=0;i<usernames.size();i++){
-            User user=new User();
+
+
+            UserFriend user=new UserFriend();
             user.setUserName(usernames.get(i));
             users.add(user);
         }

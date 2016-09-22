@@ -1,6 +1,6 @@
 package com.hkd.lianmeng.tools;
 //Download by http://www.codefans.net
-import com.hkd.lianmeng.model.User;
+import com.hkd.lianmeng.model.UserFriend;
 
 import java.util.Comparator;
 
@@ -9,9 +9,9 @@ import java.util.Comparator;
  * @author xiaanming
  *
  */
-public class PinyinComparator implements Comparator<User> {
+public class PinyinComparator implements Comparator<UserFriend> {
 
-	public int compare(User o1, User o2) {
+	public int compare(UserFriend o1, UserFriend o2) {
 		if (o1.getSortLetters().equals("@")
 				|| o2.getSortLetters().equals("#")) {
 			return -1;

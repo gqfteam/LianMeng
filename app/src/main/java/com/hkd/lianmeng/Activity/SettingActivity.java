@@ -2,24 +2,25 @@ package com.hkd.lianmeng.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.adapter.SettingListAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SettingActivity extends Activity {
-
-    @Bind(R.id.setting_back_img)
-    ImageView settingBackImg;
+    //listview
     @Bind(R.id.listView_fregment_setting)
     ListView listViewFregmentSetting;
+    //textview_我
+    @Bind(R.id.setting_me_txt)
+    TextView settingMeTxt;
+    //自定义adapter
     private SettingListAdapter mSettingListAdapter;
 
     @Override
@@ -42,13 +43,13 @@ public class SettingActivity extends Activity {
      * @param r 右边距
      * @param b 底部
      */
-    public static void setMargins (View v, int l, int t, int r, int b) {
+    /*public static void setMargins (View v, int l, int t, int r, int b) {
         if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
             p.setMargins(l, t, r, b);
             v.requestLayout();
         }
-    }
+    }*/
 
 
     /**
@@ -59,10 +60,19 @@ public class SettingActivity extends Activity {
             mSettingListAdapter = new SettingListAdapter(SettingActivity.this);
         }
 
-        View _settingFoot = LayoutInflater.from(SettingActivity.this).inflate(R.layout.setting_list_foot,null);
-
-        listViewFregmentSetting.addFooterView(_settingFoot);
         listViewFregmentSetting.setAdapter(mSettingListAdapter);
     }
+
+    @OnClick({R.id.setting_me_txt})
+    public void onClick(View view) {
+        switch (view.getId()) {
+
+            case R.id.setting_me_txt:
+                finish();
+                break;
+
+        }
+    }
+
 
 }

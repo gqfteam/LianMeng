@@ -11,7 +11,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 
 import com.example.johe.lianmengdemo.R;
-import com.hkd.lianmeng.Activity.LoginActivity;
+import com.hkd.lianmeng.Activity.ContactActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -128,6 +128,6 @@ public class SaleFragemnt extends Fragment {
     @OnClick(R.id.sf_top_msg_img)
     public void onClick() {
         //通知主界面跳转通讯录消息界面
-        mListener.changeActivity(LoginActivity.class);
+        mListener.changeActivity(ContactActivity.class);
     }
 }

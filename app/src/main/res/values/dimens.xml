@@ -27,7 +27,9 @@
     <dimen name="one_margin_item">5dp</dimen>
     <dimen name="two_margin_item">10dp</dimen>
     <dimen name="three_margin_item">15dp</dimen>
-    <dimen name="four_margin_item">20dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="four_margin_item">20dp</dimen>
+    <!--退出登录上边距-->
+    <dimen name="six_margin_item">50dp</dimen>
 
 </resources>
