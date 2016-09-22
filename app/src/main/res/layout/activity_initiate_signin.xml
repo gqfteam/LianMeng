@@ -113,7 +113,7 @@
         <EditText
             android:layout_width="@dimen/four_height_item"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/one_margin_item"
+            android:layout_marginLeft="@dimen/two_margin_item"
             android:background="@drawable/initialsignin_top_search_edittext"
             android:hint="@string/initialsignin_top_signin_other"
             android:textSize="@dimen/small_txt_size" />
@@ -180,7 +180,7 @@
         <EditText
             android:layout_width="@dimen/four_height_item"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/one_margin_item"
+            android:layout_marginLeft="@dimen/two_margin_item"
             android:background="@drawable/initialsignin_top_search_edittext"
             android:hint="@string/initialsignin_top_signin_other"
             android:textSize="@dimen/small_txt_size" />
@@ -189,6 +189,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/initialsignin_top_minute" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/two_margin_item">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="@dimen/medium_txt_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/one_margin_item"
+            android:text="@string/initialsignin_top_signinlocal_txt"
+            android:textSize="@dimen/medium_txt_size" />
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/one_margin_item"
+            android:background="@drawable/initialsignin_top_search_edittext"
+            android:hint="@string/initialsignin_top_local_hint"
+            android:textSize="@dimen/small_txt_size"
+            android:layout_marginRight="@dimen/five_height_item"
+            android:gravity="left|top"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -218,6 +257,7 @@
             android:layout_marginLeft="@dimen/two_margin_item"
             android:layout_marginRight="@dimen/five_height_item"
             android:background="@drawable/initialsignin_top_search_off"
+            android:textSize="@dimen/small_txt_size"
             android:gravity="left|top"
             android:inputType="textMultiLine"
             android:singleLine="false" />
