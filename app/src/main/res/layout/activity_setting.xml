@@ -13,21 +13,17 @@
         android:layout_marginBottom="@dimen/three_margin_item"
         >
 
-        <ImageView
-            android:id="@+id/setting_back_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/back"
-            />
         <TextView
             android:id="@+id/setting_me_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/back"
             android:text="我"
+            android:gravity="center"
             android:textColor="@color/blueColor"
             android:textSize="@dimen/big_txt_size"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/setting_back_img"/>
+            />
         <TextView
             android:id="@+id/setting_set_txt"
             android:layout_width="wrap_content"
@@ -41,6 +37,19 @@
     <ListView
         android:id="@+id/listView_fregment_setting"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/setting_listItem_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:text="退出登录"
+        android:textColor="@color/red"
+        android:padding="@dimen/two_margin_item"
+        android:layout_marginTop="@dimen/six_margin_item"
+        android:textSize="@dimen/big_txt_size"
+        />
 
 </LinearLayout>
