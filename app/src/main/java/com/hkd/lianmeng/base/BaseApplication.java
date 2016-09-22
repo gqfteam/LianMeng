@@ -4,9 +4,15 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
+import com.hkd.lianmeng.model.LoginUser;
+import com.hkd.lianmeng.model.User;
+import com.hkd.lianmeng.tools.LoginUserInfoUtils;
 import com.hyphenate.EMCallBack;
+import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
 
 import java.util.Iterator;
@@ -22,7 +28,10 @@ public class BaseApplication extends Application {
 
     public static Context applicationContext;
     //public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
+    public static boolean isLogin=false;
 
+    public static User mUser;
+    private LoginUserInfoUtils mLoginUserInfoUtils;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -39,7 +48,7 @@ public class BaseApplication extends Application {
         EMOptions options = new EMOptions();
         // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAcceptInvitationAlways(false);
-
+        options.setAutoLogin(false);
         int pid = android.os.Process.myPid();
         String processAppName = getAppName(pid);
         // 如果APP启用了远程的service，此application:onCreate会被调用2次
@@ -57,6 +66,45 @@ public class BaseApplication extends Application {
         EMClient.getInstance().setDebugMode(true);
         //EaseUI.getInstance().init(applicationContext, options);
 
+        //判断用户是否登录过
+        isLogin();
+
+
+
+
+
+    }
+    private EMMessageListener msgListener;
+    private  void getMsg(){
+        EMClient.getInstance().chatManager().addMessageListener(msgListener);
+        msgListener = new EMMessageListener() {
+
+            @Override
+            public void onMessageReceived(List<EMMessage> messages) {
+                //收到消息
+                Log.i("gqf","gqf"+messages.size());
+            }
+
+            @Override
+            public void onCmdMessageReceived(List<EMMessage> messages) {
+                //收到透传消息
+            }
+
+            @Override
+            public void onMessageReadAckReceived(List<EMMessage> messages) {
+                //收到已读回执
+            }
+
+            @Override
+            public void onMessageDeliveryAckReceived(List<EMMessage> message) {
+                //收到已送达回执
+            }
+
+            @Override
+            public void onMessageChanged(EMMessage message, Object change) {
+                //消息状态变动
+            }
+        };
     }
     private String getAppName(int pID) {
         String processName = null;
@@ -85,13 +133,37 @@ public class BaseApplication extends Application {
     public static String getUserName() {
         return null;
     }
+    @Override
+    public void onTerminate() {
+        // 程序终止的时候执行
+        EMClient.getInstance().logout(true);
+        super.onTerminate();
+    }
     /**
      * 退出登录,清空数据
      */
     public void logout(final EMCallBack emCallBack) {
         // 先调用sdk logout，在清理app中自己的数据
         //hxSDKHelper.logout(emCallBack);
+        EMClient.getInstance().chatManager().removeMessageListener(msgListener);
     }
 
+    /**
+     * 读取登录信息，判断是否登录过
+     */
+    public void isLogin() {
+        mLoginUserInfoUtils = LoginUserInfoUtils.getLoginUserInfoUtils();
+        LoginUser mLoginUser ;
+        try {
+            mLoginUser = mLoginUserInfoUtils.getLoginUserInfo(applicationContext, LoginUserInfoUtils.KEY);
+            if(mLoginUser!=null){
+                mUser.setUserName(mLoginUser.getUserName());
+                isLogin=true;
+            }
 
+        }
+        catch (Exception e){
+
+        }
+    }
 }

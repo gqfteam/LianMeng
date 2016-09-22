@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
-import com.hkd.lianmeng.model.User;
+import com.hkd.lianmeng.model.UserFriend;
 
 import java.util.ArrayList;
 
@@ -20,18 +20,18 @@ import butterknife.ButterKnife;
  * Created by johe on 2016/9/21.
  */
 public class FriendsListAdapter extends BaseAdapter {
-    private ArrayList<User> datas;//数据源
+    private ArrayList<UserFriend> datas;//数据源
     private Context mContext;
     private LayoutInflater layoutInflater;
     private ViewHolder mHolder;
 
 
-    public void update(ArrayList<User> datas) {
+    public void update(ArrayList<UserFriend> datas) {
         this.datas = datas;
         this.notifyDataSetChanged();
     }
 
-    public FriendsListAdapter(Context context, ArrayList<User> datas) {
+    public FriendsListAdapter(Context context, ArrayList<UserFriend> datas) {
         this.mContext = context;
         this.datas = datas;
         this.layoutInflater = LayoutInflater.from(context);
