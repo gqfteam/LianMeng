@@ -66,6 +66,9 @@
         <activity android:name="com.hkd.lianmeng.Activity.LoginActivity">
 
         </activity>
+        <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity">
+
+        </activity>
     </application>
 
 </manifest>
