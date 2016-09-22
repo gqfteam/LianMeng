@@ -1,6 +1,7 @@
 package com.hkd.lianmeng.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.adapter.SettingListAdapter;
+import com.hkd.lianmeng.base.BaseApplication;
+import com.hyphenate.chat.EMClient;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +23,10 @@ public class SettingActivity extends Activity {
     //textview_我
     @Bind(R.id.setting_me_txt)
     TextView settingMeTxt;
+    //textView_退出登录
+    @Bind(R.id.setting_TCDL_txt)
+    TextView settingTCDLTxt;
+
     //自定义adapter
     private SettingListAdapter mSettingListAdapter;
 
@@ -63,12 +70,20 @@ public class SettingActivity extends Activity {
         listViewFregmentSetting.setAdapter(mSettingListAdapter);
     }
 
-    @OnClick({R.id.setting_me_txt})
+    @OnClick({R.id.setting_me_txt,R.id.setting_TCDL_txt})
     public void onClick(View view) {
         switch (view.getId()) {
 
             case R.id.setting_me_txt:
                 finish();
+                break;
+            case R.id.setting_TCDL_txt:
+
+                //Toast.makeText(this, "tuichudegnlu", Toast.LENGTH_SHORT).show();
+                BaseApplication a = new BaseApplication();
+                EMClient.getInstance().logout(true);
+                startActivity(new Intent(SettingActivity.this,LoginActivity.class));
+
                 break;
 
         }

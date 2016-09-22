@@ -62,6 +62,8 @@ public class LoginActivity extends Activity {
     }
 
     private void gotoLogin() {
+
+
         final String strAcct = username.getText().toString().trim();
         final String strPwd = password.getText().toString().trim();
         if (TextUtils.isEmpty(strAcct)) {
@@ -106,6 +108,7 @@ public class LoginActivity extends Activity {
             public void onError(int code, String message) {
 
                 Log.d("main", "登录聊天服务器失败！");
+                //Toast.makeText(LoginActivity.this,"登录聊天服务器失败",Toast.LENGTH_LONG).show();
                 loginBottonLoginBtn.setEnabled(true);
             }
         });

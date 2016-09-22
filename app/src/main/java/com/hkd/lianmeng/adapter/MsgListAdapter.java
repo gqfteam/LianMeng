@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
@@ -17,16 +18,20 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by johe on 2016/9/22.
  */
 public class MsgListAdapter extends BaseAdapter {
+    @Bind(R.id.msg_lItem_lLaout)
+    LinearLayout msgLItemLLaout;
     private Context mContext;
     private LayoutInflater layoutInflater;
     private ViewHolder mHolder;
     private ArrayList<UserFriend> datas;
     private DemoHelper mDemoHelper;
+
     public void update(ArrayList<UserFriend> datas) {
         this.datas = datas;
         this.notifyDataSetChanged();
@@ -36,7 +41,7 @@ public class MsgListAdapter extends BaseAdapter {
         this.mContext = context;
         this.datas = datas;
         this.layoutInflater = LayoutInflater.from(context);
-        mDemoHelper=DemoHelper.getInstance();
+        mDemoHelper = DemoHelper.getInstance();
     }
 
     public int getCount() {
@@ -58,9 +63,7 @@ public class MsgListAdapter extends BaseAdapter {
     public View getView(int arg0, View arg1, ViewGroup arg2) {
 
         if (arg1 == null) {
-
-            arg1 = layoutInflater.inflate(R.layout.msg_list_item,
-                    null);// inflate(context,
+            arg1 = layoutInflater.inflate(R.layout.msg_list_item, null);// inflate(context,
             // R.layout.list_item,
             // null);
             mHolder = new ViewHolder(arg1);
@@ -73,10 +76,16 @@ public class MsgListAdapter extends BaseAdapter {
         EMMessageBody eb = datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getBody();
 
         mHolder.msgListItemMsg.setText(eb.toString());
-        String time=mDemoHelper.getTimeLongToString(datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getMsgTime());
+        String time = mDemoHelper.getTimeLongToString(datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getMsgTime());
 
         mHolder.msgListItemTime.setText(time);
+
         return arg1;
+    }
+
+    @OnClick(R.id.msg_lItem_lLaout)
+    public void onClick() {
+        //mContext.startActivity();
     }
 
 

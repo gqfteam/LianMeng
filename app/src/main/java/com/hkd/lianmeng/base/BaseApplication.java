@@ -68,11 +68,6 @@ public class BaseApplication extends Application {
 
         //判断用户是否登录过
         isLogin();
-
-
-
-
-
     }
     private EMMessageListener msgListener;
     private  void getMsg(){
@@ -147,6 +142,8 @@ public class BaseApplication extends Application {
         //hxSDKHelper.logout(emCallBack);
         EMClient.getInstance().chatManager().removeMessageListener(msgListener);
     }
+
+
 
     /**
      * 读取登录信息，判断是否登录过

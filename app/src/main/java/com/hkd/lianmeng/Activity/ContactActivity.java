@@ -6,11 +6,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.fragment.FriendListFragment;
 import com.hkd.lianmeng.fragment.MsgListFragment;
-
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,12 +27,14 @@ public class ContactActivity extends FragmentActivity {
     RadioButton contactTopMsgRad;
     @Bind(R.id.contact_top_friend_rad)
     RadioButton contactTopFriendRad;
+    @Bind(R.id.contact_back_txt)
+    TextView contactBackTxt;
     private FragmentTransaction ft;
     private MsgListFragment msgListFragment;
     private FriendListFragment friendListFragment;
 
 
-    private boolean isContactRad=true;
+    private boolean isContactRad = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,24 +44,23 @@ public class ContactActivity extends FragmentActivity {
         initTopRadAndFragment();
 
     }
-    private void initTopRadAndFragment(){
-        if(isContactRad){
+
+    private void initTopRadAndFragment() {
+        if (isContactRad) {
             //消息
             contactTopMsgRad.setChecked(true);
             contactTopFriendRad.setChecked(false);
 
 
-            msgListFragment=new MsgListFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contact_fragment, msgListFragment).commit();
+            msgListFragment = new MsgListFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.contact_fragment, msgListFragment).commit();
 
-        }else{
+        } else {
             //联系人
             contactTopMsgRad.setChecked(false);
             contactTopFriendRad.setChecked(true);
-            friendListFragment=new FriendListFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contact_fragment, friendListFragment).commit();
+            friendListFragment = new FriendListFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.contact_fragment, friendListFragment).commit();
         }
     }
 
@@ -78,28 +79,30 @@ public class ContactActivity extends FragmentActivity {
         ft.commit();
     }
 
-    @OnClick({R.id.contact_top_msg_rad, R.id.contact_top_friend_rad})
+    @OnClick({R.id.contact_top_msg_rad, R.id.contact_top_friend_rad,R.id.contact_back_txt})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.contact_top_msg_rad:
-                isContactRad=true;
+                isContactRad = true;
                 if (msgListFragment != null) {
                     showFragment(msgListFragment);
                 } else {
                     msgListFragment = new MsgListFragment();
-                    getSupportFragmentManager().beginTransaction()
-                            .add(R.id.contact_fragment, msgListFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.contact_fragment, msgListFragment).commit();
                 }
                 break;
             case R.id.contact_top_friend_rad:
-                isContactRad=false;
+                isContactRad = false;
                 if (friendListFragment != null) {
                     showFragment(friendListFragment);
                 } else {
                     friendListFragment = new FriendListFragment();
-                    getSupportFragmentManager().beginTransaction()
-                            .add(R.id.contact_fragment, friendListFragment).commit();
+                    getSupportFragmentManager().beginTransaction().add(R.id.contact_fragment, friendListFragment).commit();
                 }
+                break;
+            case R.id.contact_back_txt:
+                //Toast.makeText(this, "back", Toast.LENGTH_SHORT).show();
+                finish();
                 break;
         }
     }
