@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;
 import com.hkd.lianmeng.fragment.SchoolInfoFragment;
@@ -108,7 +109,15 @@ public class MainActivity extends FragmentActivity implements SaleFragemnt.mList
             @SuppressWarnings("rawtypes") Class activityClass){
 
         mIntent=new Intent();
-        mIntent.setClass(MainActivity.this,activityClass);
+        if(activityClass==ContactActivity.class){
+            //判断是否登录
+            if(BaseApplication.isLogin){
+                mIntent.setClass(MainActivity.this,activityClass);
+            }else {
+
+                mIntent.setClass(MainActivity.this, LoginActivity.class);
+            }
+        }
         startActivity(mIntent);
     }
 }

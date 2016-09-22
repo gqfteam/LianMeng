@@ -1,16 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--gqf-->
 <!--通讯录好友列表-->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.hkd.lianmeng.fragment.FriendListFragment">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/five_height_item"
+            android:layout_marginBottom="@dimen/two_margin_item"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/two_margin_item"
+            android:background="@drawable/searchallcity_shap"
+            android:orientation="horizontal" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+            <TextView
+                android:layout_width="@dimen/four_margin_item"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/one_margin_item"
+                android:background="@mipmap/apollo_ic_search" />
+
+            <EditText
+                android:id="@+id/ac_top_edi_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="@dimen/one_margin_item"
+                android:layout_marginTop="@dimen/one_margin_item"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:hint="城市/行政区/拼音"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/ac_top_edi_clear"
+                android:layout_width="@dimen/four_margin_item"
+                android:layout_height="@dimen/four_margin_item"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/ic_search_clear"
+                android:gravity="center_vertical"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/friend_list_allfriends"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/beige"
-        android:text="@string/hello_blank_fragment"/>
+        android:background="@android:color/white"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 
-</FrameLayout>
+    <com.hkd.lianmeng.view.SideBar
+        android:id="@+id/friend_list_sidebar"
+        android:layout_width="@dimen/five_height_item"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_marginBottom="?android:attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/friend_list_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/three_height_item"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/lightBlueColor"
+        android:gravity="center_vertical"
+        android:padding="@dimen/two_margin_item"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

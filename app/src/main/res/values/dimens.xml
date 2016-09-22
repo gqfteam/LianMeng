@@ -32,5 +32,8 @@
     <!--JYQ-->
     <dimen name="returntv_marginRight">18dp</dimen>
     <dimen name="returntv_marginBottom">7dp</dimen>
+    <dimen name="four_margin_item">20dp</dimen>
+    <!--退出登录上边距-->
+    <dimen name="six_margin_item">50dp</dimen>
 
 </resources>
