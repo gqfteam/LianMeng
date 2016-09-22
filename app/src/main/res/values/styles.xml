@@ -84,7 +84,7 @@
         <item name="android:drawablePadding">@dimen/one_margin_item</item>
     </style>
     <!--jyq-->
-    <!--义卖顶部rad按钮style-->
+    <!--签到列表顶部rad按钮style-->
 
     <style name="signinList_top_rad">
         <item name="android:layout_width">0dp</item>
@@ -95,6 +95,18 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:button">@null</item>
         <item name="android:padding">10dp</item>
+    </style>
+    <!--jyq-->
+    <!--jyq-->
+    <!--临时列表item中textview style-->
+
+    <style name="temporary_ListItem_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/five_height_item</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/big_txt_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">@dimen/two_margin_item</item>
     </style>
     <!--jyq-->
 

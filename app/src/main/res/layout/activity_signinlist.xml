@@ -10,12 +10,14 @@
         android:layout_height="?actionBarSize"
         android:background="@color/blueColor">
         <TextView
+            android:id="@+id/signinLlist_top_back_textview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableLeft="@mipmap/ic_comment_photo_browser_back"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"/>
         <RadioGroup
+            android:id="@+id/signinList_top_selectList_radioGroup"
             android:layout_width="@dimen/max_height_item"
             android:layout_height="@dimen/five_height_item"
             android:layout_centerHorizontal="true"
@@ -25,7 +27,7 @@
 
             android:orientation="horizontal">
             <RadioButton
-                android:id="@+id/contact_top_msg_rad"
+                android:id="@+id/signinList_top_temporary_radioButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -37,7 +39,7 @@
                 android:textColor="@color/color_redio_blue_white"
                 android:textSize="@dimen/small_txt_size"/>
             <RadioButton
-                android:id="@+id/contact_top_friend_rad"
+                android:id="@+id/signinList_top_daily_radioButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -49,14 +51,18 @@
                 android:textSize="@dimen/small_txt_size"/>
         </RadioGroup>
         <TextView
+            android:id="@+id/signinLlist_top_edit_textview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
             android:drawableLeft="@mipmap/signinlist_edit"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-        android:layout_alignParentRight="true"/>
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
     </RelativeLayout>
 
-
     <!-- 内容部分碎片 -->
+    <FrameLayout
+        android:id="@+id/signinlist" android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="@color/white"></FrameLayout>
 </LinearLayout>
