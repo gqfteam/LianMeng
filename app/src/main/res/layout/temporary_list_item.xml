@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="120dp"
-              android:orientation="horizontal"
-              android:paddingLeft="@dimen/activity_horizontal_margin"
-              android:paddingRight="@dimen/activity_horizontal_margin">
+              android:layout_height="@dimen/max_height_item"
+              android:orientation="vertical">
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/oneanntwo_height_item"
+                  android:layout_margin="@dimen/activity_horizontal_margin"
+                  android:background="@color/green_background"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/activity_horizontal_margin">
     <!--left-->
     <LinearLayout android:layout_width="0dp"
                   android:layout_height="match_parent"
@@ -35,33 +40,50 @@
             android:id="@+id/signin_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/four_margin_item"
-            android:background="@color/orange"
-            android:text="签到"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/two_margin_item"
+            android:background="@color/orange_bt"
+            android:text="签到"
+        android:textSize="@dimen/super_txt_size"
+        android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/returnTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/returntv_marginBottom"
+            android:layout_marginRight="@dimen/returntv_marginRight"
+            android:text="剩余：00:08:30"
+            android:textSize="@dimen/medium_txt_size"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="剩余：00:08:30"
-            android:textSize="@dimen/medium_txt_size"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@id/returnTime"
             android:layout_alignParentEnd="true"
-        android:layout_marginRight="@dimen/returntv_marginRight"
-        android:layout_marginBottom="@dimen/returntv_marginBottom"/>
+            android:layout_marginBottom="@dimen/returntv_marginBottom"
+            android:layout_marginRight="@dimen/returntv_marginRight"
+            android:text="目的：开会"
+            android:textSize="@dimen/medium_txt_size"/>
     </RelativeLayout>
     <!--图片-->
     <RelativeLayout android:layout_width="0dp" android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical"
-    android:visibility="gone">
-            <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
-            android:src="@mipmap/signinlist_success"
-            android:layout_centerVertical="true"
-            android:paddingTop="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
-            android:paddingLeft="@dimen/four_height_item"/>
+                    android:visibility="gone">
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                   android:layout_centerVertical="true"
+                   android:paddingBottom="@dimen/activity_horizontal_margin"
+                   android:paddingLeft="@dimen/four_height_item"
+                   android:paddingTop="@dimen/activity_horizontal_margin"
+                   android:src="@mipmap/signinlist_success"/>
     </RelativeLayout>
 
-
+</LinearLayout>
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@mipmap/line"
+               android:layout_marginLeft="@dimen/activity_horizontal_margin"
+               android:layout_marginRight="@dimen/activity_horizontal_margin"/>
 </LinearLayout>
