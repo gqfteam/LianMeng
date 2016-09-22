@@ -84,6 +84,18 @@
         <item name="android:drawablePadding">@dimen/one_margin_item</item>
     </style>
 
+    <!--柳 发起签到页面几个按钮选项的格式 redioButton-->
+    <style name="initialsigninpage_radiobutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/one_margin_item</item>
+        <item name="android:paddingTop">@dimen/one_margin_item</item>
+        <item name="android:paddingLeft">@dimen/four_margin_item</item>
+        <item name="android:paddingRight">@dimen/four_margin_item</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
