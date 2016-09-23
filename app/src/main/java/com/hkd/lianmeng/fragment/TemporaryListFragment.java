@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.adapter.SigninListAdapter;
+import com.hkd.lianmeng.model.SigninInfo;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +24,9 @@ public class TemporaryListFragment extends Fragment {
 
     @Bind(R.id.temporary_list)
     ListView temporaryList;
+    SigninListAdapter adapter;
+    SigninInfo signinInfo;
+    ArrayList<SigninInfo> datas;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +34,25 @@ public class TemporaryListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_temporary_list, container, false);
         ButterKnife.bind(this, view);
+        init();
         return view;
+    }
+
+    public void init() {
+        signinInfo=new SigninInfo();
+//        signinInfo.setName("rose");
+//        signinInfo.setTime("15:24");
+//        signinInfo.setPlace("河南省洛阳市河南科技大学西苑校区10号楼512");
+//        signinInfo.setPurpose("上课");
+        datas=new ArrayList<SigninInfo>();
+        datas.add(signinInfo);
+        datas.add(signinInfo);
+        datas.add(signinInfo);
+        datas.add(signinInfo);
+        datas.add(signinInfo);
+        datas.add(signinInfo);
+        adapter=new SigninListAdapter(getActivity(),datas);
+        temporaryList.setAdapter(adapter);
     }
 
     @Override
@@ -35,4 +60,5 @@ public class TemporaryListFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 }

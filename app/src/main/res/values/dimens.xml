@@ -29,10 +29,13 @@
     <dimen name="two_margin_item">10dp</dimen>
     <dimen name="three_margin_item">15dp</dimen>
     <dimen name="four_margin_item">20dp</dimen>
+    <dimen name="five_margin_item">25dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <!--JYQ-->
     <dimen name="returntv_marginRight">18dp</dimen>
     <dimen name="returntv_marginBottom">7dp</dimen>
+    <dimen name="purposetv_marginTop">8dp</dimen>
+
     <!--退出登录上边距-->
     <dimen name="six_margin_item">50dp</dimen>
 
