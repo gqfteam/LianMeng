@@ -54,6 +54,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
         <activity
             android:name="com.hkd.lianmeng.Activity.SettingActivity"
@@ -67,6 +68,7 @@
 
         </activity>
         <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity">
+
 
         </activity>
     </application>
