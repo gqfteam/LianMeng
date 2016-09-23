@@ -54,7 +54,7 @@ public class SideBar extends View {
 
 		for (int i = 0; i < b.length; i++) {
 			//设置画笔颜色
-			paint.setColor(Color.rgb(17,189 ,168));
+			paint.setColor(Color.rgb(50,152 ,246));
 			// paint.setColor(Color.WHITE);
 			//设置字体
 			paint.setTypeface(Typeface.DEFAULT_BOLD);
@@ -64,7 +64,7 @@ public class SideBar extends View {
 			paint.setTextSize(30);
 			// 选中的状态
 			if (i == choose) {
-				paint.setColor(Color.parseColor("#3399ff"));
+				paint.setColor(Color.parseColor("#0066FF"));
 				//字体加粗
 				paint.setFakeBoldText(true);
 			}

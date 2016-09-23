@@ -1,17 +1,22 @@
 package com.hkd.lianmeng.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.Activity.ContactActivity;
+import com.hkd.lianmeng.Activity.SchoolinfoNewListActivity;
 import com.hkd.lianmeng.constant.Constant;
 import com.hkd.lianmeng.model.Sentence;
 import com.hkd.lianmeng.view.CarouselView;
@@ -28,6 +33,8 @@ import butterknife.OnClick;
 
 public class SchoolInfoFragment extends Fragment {
     View mview;
+    @Bind(R.id.schoolinfo_ScrollView)
+    ScrollView mSchoolinfoScrollView;
     @Bind(R.id.schoolinfo_top_address_tv)
     TextView schoolinfoTopAddressTv;
     @Bind(R.id.schoolinfo_top_address_iv)
@@ -37,7 +44,7 @@ public class SchoolInfoFragment extends Fragment {
     @Bind(R.id.schoolinfo_top_qcord_iv)
     ImageView schoolinfoTopQcordIv;
     @Bind(R.id.schoolinfo_top_chat_iv)
-    ImageView schoolinfoTopChatIv;
+    ImageView mSchoolinfoTopChatIv;
     @Bind(R.id.schoolinfo_top_carousel_cv)
     CarouselView mSchoolinfoTopCarouselCv;
     @Bind(R.id.schoolinfo_top_netteach_rb)
@@ -71,16 +78,23 @@ public class SchoolInfoFragment extends Fragment {
          mview = inflater.inflate(R.layout.fragment_school_info, container, false);
         ButterKnife.bind(this, mview);
         mNewListVerticalScrollTextView= (VerticalScrollTextView) mview.findViewById(R.id.schoolinfo_moddle_newslist_vstv);
-        initDatas();
-        initNewsList();
+        initDisplay();
+
         return mview;
 
     }
 
+    /*初始化数据*/
     public void initDatas() {
         mSchoolinfoTopCarouselCv.setImagesRes(Constant.FieldImage);
-    }
+        initNewsList();
 
+    }
+    /*初始化显示信息*/
+    public void initDisplay() {
+        initDatas();
+        mSchoolinfoScrollView.setOnTouchListener(new TouchListenerImpl());
+    }
 
     @Override
     public void onDestroyView() {
@@ -98,6 +112,7 @@ public class SchoolInfoFragment extends Fragment {
             case R.id.schoolinfo_top_search_sv:
                 break;
             case R.id.schoolinfo_top_chat_iv:
+                startActivity(new Intent(getActivity(), ContactActivity.class));
                 break;
             case R.id.schoolinfo_top_carousel_cv:
                 break;
@@ -126,6 +141,9 @@ public class SchoolInfoFragment extends Fragment {
         }
     }
 
+    /**
+     * 新闻设置滚动条的数据
+     */
     public void initNewsList(){
 
         List lst=new ArrayList<Sentence>();
@@ -146,4 +164,52 @@ public class SchoolInfoFragment extends Fragment {
         //更新View
         mNewListVerticalScrollTextView.updateUI();//*
     }
+
+    /**
+     * 设置ScrollVie滚动的监听时间
+     */
+    //判断是否滑动到底部，防止重复加载
+
+    @Override
+    public void onResume() {
+        super.onResume();
+       //重新设置flag
+        flag=true;
+    }
+    boolean flag=true;
+    private class TouchListenerImpl implements View.OnTouchListener {
+        @Override
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    int scrollY=view.getScrollY();
+                    int height=view.getHeight();
+                    int scrollViewMeasuredHeight=mSchoolinfoScrollView.getChildAt(0).getMeasuredHeight();
+                    if(scrollY==0){
+                        System.out.println("滑动到了顶端 view.getScrollY()="+scrollY);
+                    }
+
+                    if (flag) {
+                        if ((scrollY + height) == scrollViewMeasuredHeight) {
+                            flag=false;
+                            System.out.println("滑动到了底部 scrollY=" + scrollY);
+                            System.out.println("滑动到了底部 height=" + height);
+                            System.out.println("滑动到了底部 scrollViewMeasuredHeight=" + scrollViewMeasuredHeight);
+                            startActivity(new Intent(getActivity(), SchoolinfoNewListActivity.class));
+
+                        }
+                    }
+                        break;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+
+    };
+
 }
