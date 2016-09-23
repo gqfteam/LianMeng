@@ -31,6 +31,7 @@
     <string name="tools_ask_problem">问问</string>
     <string name="tools_other">更多</string>
     <string name="tools_score">成绩</string>
+    <!-- 春   首页 学校信息-->
     <string name="tools_user_nickname">微微一笑</string>
     <string name="tools_user_class">软工132班</string>
     <!-- 春   首页 学校信息-->
@@ -54,6 +55,10 @@
     <string name="schoolinfo_campus_advertisement">校园广告 >></string>
     <string name="schoolinfo_practical_information">实用信息 >></string>
     <string name="schoolinfo_alumni_club">校友总汇 >></string>
+    <string name="schoolinfo_school_situation">学校状况</string>
+    <string name="schoolinfo_schools_departments">院系设置</string>
+    <string name="schoolinfo_education_teaching">教育教学</string>
+    <string name="schoolinfo_scientific_research">科学研究</string>
 
 
     <!--柳  发起签到页面-->

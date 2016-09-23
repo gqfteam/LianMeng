@@ -58,6 +58,7 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/schoolinfo_ScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -168,8 +169,11 @@
     </LinearLayout>
     <include
         android:id="@+id/schoolinfo_bottom_common_con"
+
         layout="@layout/schoolinfo_bottom_common_connection"/>
 
+        <include android:id="@+id/schoolinfo_bottom_school_details_ll"
+            layout="@layout/schoolinfo_bottom_school_details"/>
 </LinearLayout>
 
     </ScrollView>
