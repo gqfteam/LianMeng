@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.hkd.lianmeng.fragment.ToolsFragment">
 
-    <!-- 柳亚婷  工具类的页面 -->
+    <!-- 柳亚婷  工具类的页面   -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,10 +14,43 @@
        android:layout_height="match_parent"
        android:orientation="vertical"
        >
+
        <RelativeLayout
           style="@style/vertical_weight_1"
            >
-
+           <com.hkd.lianmeng.view.CircleImageView
+               android:id="@+id/toolsf_middle_userimg_img"
+               android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:scaleType="centerInside"
+               android:src="@mipmap/tools_user_pic"
+               android:layout_alignParentBottom="true"
+               android:layout_marginBottom="@dimen/four_margin_item"
+               android:layout_marginLeft="@dimen/four_margin_item"
+               />
+           <TextView
+               android:id="@+id/toolsf_middle_username_text"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/tools_user_nickname"
+               android:layout_alignTop="@id/toolsf_middle_userimg_img"
+               android:layout_toRightOf="@id/toolsf_middle_userimg_img"
+               android:layout_marginLeft="@dimen/three_margin_item"
+               android:textSize="@dimen/super_txt_size"
+               android:layout_marginTop="@dimen/two_margin_item"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignBottom="@id/toolsf_middle_userimg_img"
+               android:layout_toRightOf="@id/toolsf_middle_userimg_img"
+               android:text="@string/tools_user_class"
+               android:layout_marginLeft="@dimen/three_margin_item"
+               android:textSize="@dimen/medium_txt_size"
+               android:layout_marginTop="@dimen/one_margin_item"
+               android:textColor="@color/homebottomColor"
+               android:layout_marginBottom="@dimen/two_margin_item"
+               />
        </RelativeLayout>
        <LinearLayout
            style="@style/vertical_weight_1"
@@ -47,6 +80,7 @@
                    android:background="@color/white"
                    />
                <RelativeLayout
+                   android:id="@+id/toolsf_middle_initialsignin_relative"
                    style="@style/horizontal_weight_1"
                    android:gravity="center">
                    <TextView
@@ -76,7 +110,7 @@
            </LinearLayout>
            <TextView
                android:layout_width="match_parent"
-               android:layout_height="@dimen/one_margin_item" />
+               android:layout_height="2dp" />
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="0dp"
@@ -103,7 +137,7 @@
                    <TextView
                        android:layout_width="1dp"
                        android:layout_height="match_parent"
-                       android:background="#fff"
+                       android:background="@color/white"
                        />
                    <RelativeLayout
                        style="@style/horizontal_weight_1"

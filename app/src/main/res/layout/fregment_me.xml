@@ -2,29 +2,138 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/bg_gray"
               android:orientation="vertical">
-    <!--标题-->
+
+<!--标题-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/four_height_item"
+    android:layout_marginBottom="@dimen/three_margin_item"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我"
+        android:textColor="@color/blueColor"
+        android:textSize="@dimen/big_txt_size"/>
+</LinearLayout>
+<!--用户信息-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="@dimen/two_margin_item"
+    android:layout_marginBottom="@dimen/three_margin_item"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/four_margin_item"
+        android:src="@mipmap/me_list_tx"/>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/four_height_item"
-        android:gravity="center"
-        android:background="@color/white"
-        android:layout_marginBottom="@dimen/three_margin_item"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/three_margin_item"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我"
-            android:textColor="@color/blueColor"
-            android:textSize="@dimen/big_txt_size"/>
+            android:text="王久东"
+            android:textSize="@dimen/big_txt_size"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学号：131451080122"
+            android:textSize="@dimen/small_txt_size"
+            />
+
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listView_fregment_me"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/four_margin_item"
+        android:src="@mipmap/b"
         />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/four_margin_item"
+        android:src="@mipmap/a"
+        />
+
+</LinearLayout>
+
+<ListView
+    android:id="@+id/listView_fregment_me"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
+    <!--设置-->
+    <LinearLayout
+        android:id="@+id/me_settingClick_lLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/four_margin_item"
+        android:paddingTop="@dimen/one_margin_item"
+        android:paddingBottom="@dimen/one_margin_item"
+        android:paddingLeft="@dimen/two_margin_item"
+        android:paddingRight="@dimen/two_margin_item"
+
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/me_list_sz"
+            android:layout_marginLeft="@dimen/four_margin_item"
+            android:id="@+id/me_left_icon_img"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/three_margin_item"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+                android:textSize="@dimen/medium_txt_size"
+                android:id="@+id/me_middle_label_txt"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/a"
+            android:layout_marginLeft="@dimen/four_margin_item"
+            android:id="@+id/me_right_in_img"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

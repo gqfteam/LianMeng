@@ -62,6 +62,12 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.hkd.lianmeng.Activity.ContactActivity"></activity>
         <activity android:name="com.hkd.lianmeng.Activity.LoginActivity"></activity>
+        <activity
+            android:name="com.hkd.lianmeng.Activity.InitiateSigninActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="com.hkd.lianmeng.Activity.ContactActivity"></activity>
+        <activity android:name="com.hkd.lianmeng.Activity.LoginActivity"></activity>
         <activity android:name="com.hkd.lianmeng.Activity.SchoolinfoNewListActivity"></activity>
     </application>
 

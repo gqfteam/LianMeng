@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.fragment.FriendListFragment;
 import com.hkd.lianmeng.fragment.MsgListFragment;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -47,6 +47,8 @@ public class ContactActivity extends FragmentActivity {
             //消息
             contactTopMsgRad.setChecked(true);
             contactTopFriendRad.setChecked(false);
+
+
             msgListFragment=new MsgListFragment();
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.contact_fragment, msgListFragment).commit();
@@ -80,7 +82,6 @@ public class ContactActivity extends FragmentActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.contact_top_msg_rad:
-                Log.i("gqf","aaaaaaacontact_top_msg_rad");
                 isContactRad=true;
                 if (msgListFragment != null) {
                     showFragment(msgListFragment);
@@ -91,7 +92,6 @@ public class ContactActivity extends FragmentActivity {
                 }
                 break;
             case R.id.contact_top_friend_rad:
-                    Log.i("gqf","aaaaaaacontact_top_friend_rad");
                 isContactRad=false;
                 if (friendListFragment != null) {
                     showFragment(friendListFragment);

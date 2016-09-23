@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.base.BaseApplication;
+import com.hkd.lianmeng.model.LoginUser;
+import com.hkd.lianmeng.tools.LoginUserInfoUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 
@@ -33,6 +36,8 @@ public class LoginActivity extends Activity {
     Button loginBottonRegisterBtn;
     @Bind(R.id.login_botton_login_btn)
     Button loginBottonLoginBtn;
+    private LoginUser mLoginUser;
+    private LoginUserInfoUtils mLoginUserInfoUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class LoginActivity extends Activity {
         switch (view.getId()) {
             case R.id.login_botton_register_btn:
                 //跳转注册界面
+
                 break;
             case R.id.login_botton_login_btn:
                 //登录成功后跳转通讯录界面
@@ -57,8 +63,8 @@ public class LoginActivity extends Activity {
     }
 
     private void gotoLogin() {
-        String strAcct = username.getText().toString().trim();
-        String strPwd = password.getText().toString().trim();
+        final String strAcct = username.getText().toString().trim();
+        final String strPwd = password.getText().toString().trim();
         if (TextUtils.isEmpty(strAcct)) {
             // ToastUtils.showToast(this, "账号不为空！");
             return;
@@ -74,6 +80,20 @@ public class LoginActivity extends Activity {
                 EMClient.getInstance().groupManager().loadAllGroups();
                 EMClient.getInstance().chatManager().loadAllConversations();
                 Log.d("main", "登录聊天服务器成功！");
+
+                //保存用户名和密码在本地
+                mLoginUser=new LoginUser();
+                mLoginUser.setUserName(strAcct);
+                mLoginUser.setPassword(strPwd);
+                mLoginUserInfoUtils=LoginUserInfoUtils.getLoginUserInfoUtils();
+                try {
+                    mLoginUserInfoUtils.saveLoginUserInfo(getApplication(), LoginUserInfoUtils.KEY, mLoginUser);
+                    BaseApplication.isLogin=true;
+                    BaseApplication.mUser.setUserName(strAcct);
+                }
+                catch (Exception e){
+
+                }
                 startActivity(new Intent(LoginActivity.this, ContactActivity.class));
                 finish();
             }
@@ -85,6 +105,7 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onError(int code, String message) {
+
                 Log.d("main", "登录聊天服务器失败！");
                 loginBottonLoginBtn.setEnabled(true);
             }
