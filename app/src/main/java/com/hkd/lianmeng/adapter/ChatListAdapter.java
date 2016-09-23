@@ -1,6 +1,7 @@
 package com.hkd.lianmeng.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,6 @@ import android.widget.TextView;
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hkd.lianmeng.tools.DemoHelper;
-import com.hyphenate.chat.EMMessageBody;
 
 import java.util.ArrayList;
 
@@ -26,28 +26,28 @@ import butterknife.ButterKnife;
 public class ChatListAdapter extends BaseAdapter {
     private Context mContext;
     private ViewHolder mHolder;
-    private ArrayList<UserFriend> mDatas;
     private LayoutInflater layoutInflater;
+    private  ArrayList<UserFriend> mUserFriends;
     private DemoHelper mDemoHelper;
 
-    public ChatListAdapter(Context mContext, ArrayList<UserFriend> mDatas) {
+    public ChatListAdapter(Context mContext,  ArrayList<UserFriend> mUserFriends) {
         this.mContext = mContext;
-        this.mDatas = mDatas;
+        this.mUserFriends = mUserFriends;
         this.layoutInflater = LayoutInflater.from(mContext);
     }
 
     @Override
     public int getCount() {
-        if (mDatas == null) {
+        if (mUserFriends == null) {
             return 0;
         }
-        //Toast.makeText(mContext, Integer.toString(mDatas.get(0).getMessages().size()), Toast.LENGTH_SHORT).show();
-        return mDatas.get(0).getMessages().size();
+        Log.i("11111111111111",""+mUserFriends.size());
+        return mUserFriends.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mDatas.get(i);
+        return mUserFriends.get(i);
     }
 
     @Override
@@ -64,10 +64,10 @@ public class ChatListAdapter extends BaseAdapter {
         }else{
             mHolder = (ViewHolder) view.getTag();
         }
-        mHolder.chatLItemNameTxt.setText(mDatas.get(i).getUserName());
-        EMMessageBody _eb = mDatas.get(i).getMessages().get(mDatas.get(i).getMessages().size() - 1).getBody();
+        mHolder.chatLItemNameTxt.setText(mUserFriends.get(i).getUserName());
+        //EMMessageBody _eb = mDatas.get(i).getMessages().get(mDatas.get(i).getMessages().size() - 1).getBody();
 
-        mHolder.chatLItemMsgTxt.setText(_eb.toString().substring(5, _eb.toString().length()-1));
+        mHolder.chatLItemMsgTxt.setText(mUserFriends.get(i).getMessages().get(mUserFriends.get(i).getMessages().size()-1).getBody().toString());
         //String time = mDemoHelper.getTimeLongToString(mDatas.get(i).getMessages().get(i).getMsgTime());
         //mHolder.chatLItemTimeTxt.setText(time);
 

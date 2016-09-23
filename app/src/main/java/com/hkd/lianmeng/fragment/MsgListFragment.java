@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,10 +103,9 @@ public class MsgListFragment extends Fragment {
 
     @OnItemClick(R.id.contact_msg_list)
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Log.d("msg",mUserFriends.get(i).getMessages().get(i).getUserName());
         Intent intent = new Intent(mContext,ChatActivity.class);
+        intent.putExtra("friendName",mUserFriends.get(i).getMessages().get(i).getUserName());
         intent.putExtra("index",i);
-        intent.putExtra("userName",mUserFriends.get(i).getMessages().get(i).getUserName());
         startActivity(intent);
 
     }

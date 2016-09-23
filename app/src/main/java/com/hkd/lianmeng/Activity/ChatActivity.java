@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,10 +13,10 @@ import com.hkd.lianmeng.adapter.ChatListAdapter;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
+import com.hyphenate.chat.EMMessage;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,11 +35,13 @@ public class ChatActivity extends Activity {
     @Bind(R.id.chatActivity_contack_txt)
     TextView chatActivityContackTxt;
     private Context mContext;
-    private ArrayList<UserFriend> mMsgData;
-    private UserFriend mUserFriend;
     private ChatListAdapter chatListAdapter;
-    private Map<String, EMConversation> conversations;
+    private List<EMMessage> mMessage;
+    private ArrayList<UserFriend> mUserFriends;
+    private UserFriend userFriend;
     private Thread mThread;
+    private String mFriendName;
+    private EMConversation mConversation;
     private int mIndex = -1;
 
     @Override
@@ -53,19 +54,17 @@ public class ChatActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    conversations = EMClient.getInstance().chatManager().getAllConversations();
-                    String _username = getIntent().getStringExtra("userName");
-                    Log.d("msg",_username);
+                    mIndex = getIntent().getIntExtra("index", -1);
+                    mFriendName = getIntent().getStringExtra("friendName");
 
-                    EMConversation conversation = EMClient.getInstance().chatManager().getConversation(_username);
-                    //获取此会话在本地的所有的消息数量
-                    conversation.getAllMsgCount();
+                    mConversation = EMClient.getInstance().chatManager().getConversation(mFriendName);
+                    //获取所有的会话
+                    mMessage = mConversation.getAllMessages();
 
-                    Log.d("msg",""+ conversation.getAllMsgCount());
 
                 } catch (Exception e) {
                 }
-                if (conversations.size() != 0) {
+                if (mMessage.size() != 0) {
                     Message message = new Message();
                     message.what = 1;
                     myHandler.sendMessage(message);
@@ -90,27 +89,26 @@ public class ChatActivity extends Activity {
 
     private void initList() {
         mContext = ChatActivity.this;
-        //得到msgList的点击下标
-        mIndex = getIntent().getIntExtra("index", -1);
-        mMsgData = new ArrayList<UserFriend>();
-        Set<String> friends = conversations.keySet();
-        ArrayList<String> friendsname = new ArrayList<String>();
-        for (String user : friends) {
-            friendsname.add(user);
-        }
-        mUserFriend = new UserFriend();
-        mUserFriend.setUserName(friendsname.get(mIndex));
-        mUserFriend.setMessages(conversations.get(friendsname.get(mIndex)).getAllMessages());
-        mMsgData.add(mUserFriend);
-
         //设置头部联系对象
-        chatActivityContackTxt.setText(friendsname.get(mIndex));
-        chatListAdapter = new ChatListAdapter(mContext, mMsgData);
+        chatActivityContackTxt.setText(mFriendName);
+        if (mUserFriends==null){
+            mUserFriends = new ArrayList<>();
+        }
+        int _length =  mConversation.getAllMsgCount();
+        for (int i=0;i<_length;i++){
+            userFriend = new UserFriend();
+            userFriend.setMessages(mMessage);
+            mUserFriends.add(userFriend);
+        }
+
+
+        chatListAdapter = new ChatListAdapter(mContext, mUserFriends);
         chatListView.setAdapter(chatListAdapter);
 
     }
+
     @OnClick(R.id.chat_back_txt)
-    public void onClick(){
+    public void onClick() {
         finish();
     }
 

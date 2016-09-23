@@ -11,6 +11,17 @@ public class UserFriend extends User{
     private List<EMMessage> messages;//聊天记录
     private String sortLetters;  //显示数据拼音的首字母
 
+    private int mesCount;
+
+    public int getMesCount() {
+        return mesCount;
+    }
+
+    public void setMesCount(int mesCount) {
+        this.mesCount = mesCount;
+    }
+
+
     public String getSortLetters() {
         return sortLetters;
     }
