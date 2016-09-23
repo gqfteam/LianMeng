@@ -14,6 +14,7 @@
         android:background="@color/blueColor">
 
         <TextView
+            android:id="@+id/initialsignin_top_back_textview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableLeft="@mipmap/ic_comment_photo_browser_back"
@@ -350,6 +351,7 @@
             android:paddingRight="@dimen/two_margin_item">
 
             <TextView
+                android:id="@+id/initialsignin_bottom_cancel_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/initialsignin_bottom_btn_cancel"
