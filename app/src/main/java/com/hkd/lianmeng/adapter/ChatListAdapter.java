@@ -41,7 +41,8 @@ public class ChatListAdapter extends BaseAdapter {
         if (mDatas == null) {
             return 0;
         }
-        return mDatas.size();
+        //Toast.makeText(mContext, Integer.toString(mDatas.get(0).getMessages().size()), Toast.LENGTH_SHORT).show();
+        return mDatas.get(0).getMessages().size();
     }
 
     @Override
@@ -65,10 +66,10 @@ public class ChatListAdapter extends BaseAdapter {
         }
         mHolder.chatLItemNameTxt.setText(mDatas.get(i).getUserName());
         EMMessageBody _eb = mDatas.get(i).getMessages().get(mDatas.get(i).getMessages().size() - 1).getBody();
-        mHolder.chatLItemMsgTxt.setText(_eb.toString());
-        String time = mDemoHelper.getTimeLongToString(mDatas.get(i).getMessages().get(mDatas.get(i).getMessages().size() - 1).getMsgTime());
 
-        mHolder.chatLItemTimeTxt.setText(time);
+        mHolder.chatLItemMsgTxt.setText(_eb.toString().substring(5, _eb.toString().length()-1));
+        //String time = mDemoHelper.getTimeLongToString(mDatas.get(i).getMessages().get(i).getMsgTime());
+        //mHolder.chatLItemTimeTxt.setText(time);
 
         return view;
     }

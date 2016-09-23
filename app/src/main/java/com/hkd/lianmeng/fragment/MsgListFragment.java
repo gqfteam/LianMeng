@@ -1,15 +1,20 @@
 package com.hkd.lianmeng.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.Activity.ChatActivity;
 import com.hkd.lianmeng.adapter.MsgListAdapter;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hyphenate.chat.EMClient;
@@ -21,6 +26,7 @@ import java.util.Set;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
 
 /**
  * gqf
@@ -35,26 +41,26 @@ public class MsgListFragment extends Fragment {
     private MsgListAdapter msgListAdapter;
     private Map<String, EMConversation> conversations;
     private Thread mThread;
+    private Context mContext;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_msg_list, container, false);
         ButterKnife.bind(this, view);
 
-        mThread=new Thread(new Runnable() {
+
+        mThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     conversations = EMClient.getInstance().chatManager().getAllConversations();
 
 
-
-                }catch (Exception e){
+                } catch (Exception e) {
                 }
-                if(conversations.size()!=0) {
+                if (conversations.size() != 0) {
                     Message message = new Message();
                     message.what = 1;
                     myHandler.sendMessage(message);
@@ -66,6 +72,7 @@ public class MsgListFragment extends Fragment {
 
         return view;
     }
+
     Handler myHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -77,25 +84,37 @@ public class MsgListFragment extends Fragment {
         }
     };
 
-    public void initList(){
-        mUserFriends=new ArrayList<>();
-        Set<String> friends=conversations.keySet();
-        ArrayList<String> friendsname=new ArrayList<String>() ;
+    public void initList() {
+        mContext = getActivity();
+        mUserFriends = new ArrayList<>();
+        Set<String> friends = conversations.keySet();
+        ArrayList<String> friendsname = new ArrayList<String>();
         for (String user : friends) {
             friendsname.add(user);
         }
-        for(int i=0;i<conversations.size();i++){
-            mUserFriend=new UserFriend();
+        for (int i = 0; i < conversations.size(); i++) {
+            mUserFriend = new UserFriend();
             mUserFriend.setUserName(friendsname.get(i));
             mUserFriend.setMessages(conversations.get(friendsname.get(i)).getAllMessages());
             mUserFriends.add(mUserFriend);
         }
-        msgListAdapter=new MsgListAdapter(getContext(),mUserFriends);
+        msgListAdapter = new MsgListAdapter(getContext(), mUserFriends);
         contactMsgList.setAdapter(msgListAdapter);
+    }
+
+    @OnItemClick(R.id.contact_msg_list)
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Log.d("msg",mUserFriends.get(i).getMessages().get(i).getUserName());
+        Intent intent = new Intent(mContext,ChatActivity.class);
+        intent.putExtra("index",i);
+        intent.putExtra("userName",mUserFriends.get(i).getMessages().get(i).getUserName());
+        startActivity(intent);
+
     }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 }
