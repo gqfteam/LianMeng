@@ -52,6 +52,7 @@ public class LoginActivity extends Activity {
         switch (view.getId()) {
             case R.id.login_botton_register_btn:
                 //跳转注册界面
+
                 break;
             case R.id.login_botton_login_btn:
                 //登录成功后跳转通讯录界面

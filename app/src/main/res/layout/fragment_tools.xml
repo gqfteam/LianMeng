@@ -80,6 +80,7 @@
                    android:background="@color/white"
                    />
                <RelativeLayout
+                   android:id="@+id/toolsf_middle_initialsignin_relative"
                    style="@style/horizontal_weight_1"
                    android:gravity="center">
                    <TextView

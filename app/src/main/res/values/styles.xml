@@ -63,6 +63,17 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
+
+    <!-- 春   学校詳細信息常用的链接-->
+    <style name="schoolinfo_bottom_school_details_tv">
+        <item name="android:textSize">@dimen/small_txt_size</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+
+    </style>
     <!--柳 界面中权值为1的纵向布局-->
     <style name="vertical_weight_1">
         <item name="android:layout_width">match_parent</item>
@@ -109,6 +120,18 @@
         <item name="android:layout_marginTop">@dimen/one_margin_item</item>
     </style>
     <!--jyq-->
+
+    <!--柳 发起签到页面几个按钮选项的格式 redioButton-->
+    <style name="initialsigninpage_radiobutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/one_margin_item</item>
+        <item name="android:paddingTop">@dimen/one_margin_item</item>
+        <item name="android:paddingLeft">@dimen/four_margin_item</item>
+        <item name="android:paddingRight">@dimen/four_margin_item</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
