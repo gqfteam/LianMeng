@@ -49,6 +49,8 @@ public class BaseApplication extends Application {
         // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAcceptInvitationAlways(false);
         options.setAutoLogin(false);
+        //建议初始化SDK的时候设置成每个会话默认load一条消息，节省加载会话的时间，方法为：
+        //options.setNumberOfMessagesLoaded(10);
         int pid = android.os.Process.myPid();
         String processAppName = getAppName(pid);
         // 如果APP启用了远程的service，此application:onCreate会被调用2次
@@ -77,7 +79,7 @@ public class BaseApplication extends Application {
             @Override
             public void onMessageReceived(List<EMMessage> messages) {
                 //收到消息
-                Log.i("gqf","gqf"+messages.size());
+                Log.i("gqf","aaaaaaaaaaaaaaagqf"+messages.size());
             }
 
             @Override

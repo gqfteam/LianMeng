@@ -39,6 +39,7 @@ public class ChatActivity extends Activity {
     private List<EMMessage> mMessage;
     private ArrayList<UserFriend> mUserFriends;
     private UserFriend userFriend;
+    private UserFriend mUserFriend;
     private Thread mThread;
     private String mFriendName;
     private EMConversation mConversation;
@@ -56,7 +57,6 @@ public class ChatActivity extends Activity {
                 try {
                     mIndex = getIntent().getIntExtra("index", -1);
                     mFriendName = getIntent().getStringExtra("friendName");
-
                     mConversation = EMClient.getInstance().chatManager().getConversation(mFriendName);
                     //获取所有的会话
                     mMessage = mConversation.getAllMessages();
@@ -91,18 +91,8 @@ public class ChatActivity extends Activity {
         mContext = ChatActivity.this;
         //设置头部联系对象
         chatActivityContackTxt.setText(mFriendName);
-        if (mUserFriends==null){
-            mUserFriends = new ArrayList<>();
-        }
-        int _length =  mConversation.getAllMsgCount();
-        for (int i=0;i<_length;i++){
-            userFriend = new UserFriend();
-            userFriend.setMessages(mMessage);
-            mUserFriends.add(userFriend);
-        }
 
-
-        chatListAdapter = new ChatListAdapter(mContext, mUserFriends);
+        chatListAdapter = new ChatListAdapter(mContext, mMessage);
         chatListView.setAdapter(chatListAdapter);
 
     }

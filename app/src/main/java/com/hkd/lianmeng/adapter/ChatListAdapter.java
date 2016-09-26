@@ -13,8 +13,10 @@ import android.widget.TextView;
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hkd.lianmeng.tools.DemoHelper;
+import com.hyphenate.chat.EMMessage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,27 +29,29 @@ public class ChatListAdapter extends BaseAdapter {
     private Context mContext;
     private ViewHolder mHolder;
     private LayoutInflater layoutInflater;
-    private  ArrayList<UserFriend> mUserFriends;
+    private ArrayList<UserFriend> mUserFriends;
+    private List<EMMessage> msgData;
     private DemoHelper mDemoHelper;
 
-    public ChatListAdapter(Context mContext,  ArrayList<UserFriend> mUserFriends) {
+    public ChatListAdapter(Context mContext, List<EMMessage> msgData) {
         this.mContext = mContext;
-        this.mUserFriends = mUserFriends;
+        this.msgData = msgData;
         this.layoutInflater = LayoutInflater.from(mContext);
+        mDemoHelper = DemoHelper.getInstance();
     }
 
     @Override
     public int getCount() {
-        if (mUserFriends == null) {
+        if (msgData == null) {
             return 0;
         }
-        Log.i("11111111111111",""+mUserFriends.size());
-        return mUserFriends.size();
+        //Log.i("wjd", "msgData.size():" + msgData.size());
+        return msgData.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mUserFriends.get(i);
+        return msgData.get(i);
     }
 
     @Override
@@ -61,26 +65,28 @@ public class ChatListAdapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.chat_list_item, null);
             mHolder = new ViewHolder(view);
             view.setTag(mHolder);
-        }else{
+        } else {
             mHolder = (ViewHolder) view.getTag();
         }
-        mHolder.chatLItemNameTxt.setText(mUserFriends.get(i).getUserName());
-        //EMMessageBody _eb = mDatas.get(i).getMessages().get(mDatas.get(i).getMessages().size() - 1).getBody();
-
-        mHolder.chatLItemMsgTxt.setText(mUserFriends.get(i).getMessages().get(mUserFriends.get(i).getMessages().size()-1).getBody().toString());
-        //String time = mDemoHelper.getTimeLongToString(mDatas.get(i).getMessages().get(i).getMsgTime());
-        //mHolder.chatLItemTimeTxt.setText(time);
+        mHolder.chatLItemNameTxt.setText(msgData.get(i).getUserName());
+        //获取txt：“消息”中的消息
+        String _txt = msgData.get(i).getBody().toString().substring(5, msgData.get(i).getBody().toString().length() - 1);
+        mHolder.chatLItemMsgTxt.setText(_txt);
+        String ＿time = mDemoHelper.getTimeLongToString(msgData.get(i).getMsgTime());
+        Log.i("wjd", "＿time:" + ＿time);
+        mHolder.chatLItemTimeTxt.setText(＿time);
 
         return view;
     }
 
+
     static class ViewHolder {
         @Bind(R.id.chat_lItem_img)
         ImageView chatLItemImg;
-        @Bind(R.id.chat_lItem_name_txt)
-        TextView chatLItemNameTxt;
         @Bind(R.id.chat_lItem_time_txt)
         TextView chatLItemTimeTxt;
+        @Bind(R.id.chat_lItem_name_txt)
+        TextView chatLItemNameTxt;
         @Bind(R.id.chat_lItem_msg_txt)
         TextView chatLItemMsgTxt;
         @Bind(R.id.chat_lItem_lLaout)

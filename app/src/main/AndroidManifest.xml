@@ -20,6 +20,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
+
         android:name="com.hkd.lianmeng.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -66,7 +67,6 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.hkd.lianmeng.Activity.SchoolinfoNewListActivity"></activity>
             android:theme="@style/AppTheme.NoActionBar">
-        </activity>
         <activity android:name="com.hkd.lianmeng.Activity.ContactActivity">
 
         </activity>
@@ -76,6 +76,9 @@
         <activity android:name="com.hkd.lianmeng.Activity.ChatActivity">
 
         </activity>
-    </application>
+        </application>
 
-</manifest>
+
+
+
+    </manifest>
