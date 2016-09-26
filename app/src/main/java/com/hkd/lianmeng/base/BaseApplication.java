@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 import com.hkd.lianmeng.model.LoginUser;
+import com.hkd.lianmeng.model.SearchConditions;
 import com.hkd.lianmeng.model.User;
 import com.hkd.lianmeng.tools.LoginUserInfoUtils;
 import com.hyphenate.EMCallBack;
@@ -17,6 +18,9 @@ import com.hyphenate.chat.EMOptions;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 
 /**
@@ -29,16 +33,30 @@ public class BaseApplication extends Application {
     public static Context applicationContext;
     //public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
     public static boolean isLogin=false;
-
+    public static SearchConditions mSearchConditions;
     public static User mUser;
     private LoginUserInfoUtils mLoginUserInfoUtils;
     @Override
     public void onCreate() {
         super.onCreate();
         applicationContext = this;
+        mSearchConditions=new SearchConditions();
         initHuanXinParams();
+        initOkHttp();
     }
+    /**
+     * 初始化okhttp
+     */
+    private void initOkHttp(){
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                //                .addInterceptor(new LoggerInterceptor("TAG"))
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                //其他配置
+                .build();
 
+        //OkHttpUtils.initClient(okHttpClient);
+    }
     /**
      * 初始化环信
      */

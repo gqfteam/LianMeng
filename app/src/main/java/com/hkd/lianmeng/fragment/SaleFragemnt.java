@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ContactActivity;
+import com.hkd.lianmeng.base.BaseApplication;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -63,10 +64,15 @@ public class SaleFragemnt extends Fragment {
         mSaleListFragment = new SaleListFragment();
         getChildFragmentManager().beginTransaction()
                 .add(R.id.sale_bottom_fragment, mSaleListFragment).commit();
+        initChackBox();
         return view;
     }
 
-
+    private void initChackBox(){
+        CBShopCity.setText(BaseApplication.mSearchConditions.getCity());
+        CBShopCampus.setText(BaseApplication.mSearchConditions.getCampus());
+        CBShopClassification.setText(BaseApplication.mSearchConditions.getClassification()+"/"+BaseApplication.mSearchConditions.getSpecies());
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

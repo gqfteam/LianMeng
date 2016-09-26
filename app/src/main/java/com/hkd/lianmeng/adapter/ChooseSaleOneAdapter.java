@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.model.SaleChooseModel;
 
 import java.util.ArrayList;
@@ -30,7 +31,41 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
 
     private ViewHolder mHolder;
 
+    String province="河南省";
+    String university="河南科技大学";
+    String classification="电子产品";
+    int chooseid;
 
+    public int getChooseid() {
+        return chooseid;
+    }
+
+    public void setChooseid(int chooseid) {
+        this.chooseid = chooseid;
+    }
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    public String getClassification() {
+        return classification;
+    }
+
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
 
     public void update(ArrayList<SaleChooseModel> datas) {
         this.datas = datas;
@@ -41,7 +76,9 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
         this.mContext = context;
         this.datas = datas;
         this.layoutInflater = LayoutInflater.from(context);
-
+        province=BaseApplication.mSearchConditions.getProvince();
+        university=BaseApplication.mSearchConditions.getUniversity();
+        classification=BaseApplication.mSearchConditions.getClassification();
     }
 
     public int getCount() {
@@ -73,6 +110,14 @@ public class ChooseSaleOneAdapter extends BaseAdapter {
 
         } else {
             mHolder = (ViewHolder) arg1.getTag();
+        }
+        if((datas.get(arg0).getName().equals( province)&&chooseid==0)
+                ||(datas.get(arg0).getName().equals( university)&&chooseid==1)
+                ||(datas.get(arg0).getName().equals( classification)&&chooseid==2)){
+            mHolder.saleChoseItemOneLin.setBackgroundResource(R.color.lightgray);
+        }else{
+            mHolder.saleChoseItemOneLin.setBackgroundResource(R.color.white);
+
         }
         mHolder.choseItemMsg.setText(datas.get(arg0).getName());
 

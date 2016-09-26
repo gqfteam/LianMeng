@@ -35,4 +35,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.android.support:design:23.3.0'
+    compile files('libs/okhttp-3.4.1.jar')
+    compile files('libs/okio-1.10.0.jar')
 }
