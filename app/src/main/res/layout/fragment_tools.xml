@@ -157,10 +157,12 @@
                        android:background="#fff"
                        />
                    <RelativeLayout
+                       android:id="@+id/toolsf_middle_inquiry_signin_relative"
                        style="@style/horizontal_weight_1"
                        android:gravity="center"
                        >
                        <TextView
+
                            style="@style/toolspage_btn_picandtext"
                            android:text="@string/tools_inquiry_signin"
                            android:drawableTop="@mipmap/inquiry_signin_pic"
