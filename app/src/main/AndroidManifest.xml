@@ -64,6 +64,7 @@
         <activity android:name="com.hkd.lianmeng.Activity.InitiateSigninActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.hkd.lianmeng.Activity.SchoolinfoNewListActivity"></activity>
+        <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity"></activity>
     </application>
 
 </manifest>
