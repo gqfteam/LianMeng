@@ -77,8 +77,7 @@
 
         </activity>
         </application>
+        <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity"></activity>
+    </application>
 
-
-
-
-    </manifest>
+</manifest>

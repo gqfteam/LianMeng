@@ -7,14 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-
 import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.InitiateSigninActivity;
+import com.hkd.lianmeng.Activity.SigninListActivity;
 
 
 public class ToolsFragment extends Fragment implements View.OnClickListener{
     View toolsView;
-    RelativeLayout initialSignin_Relative;
+    RelativeLayout initialSignin_Relative,inquiry_Signin_Relative;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +30,17 @@ public class ToolsFragment extends Fragment implements View.OnClickListener{
      */
     private void init() {
         initialSignin_Relative=(RelativeLayout)toolsView.findViewById(R.id.toolsf_middle_initialsignin_relative);
+        inquiry_Signin_Relative= (RelativeLayout) toolsView.findViewById(R.id.toolsf_middle_inquiry_signin_relative);
     }
+
+    /**
+     * 给组件添加事件
+     */
+    public void addListener(){
+        initialSignin_Relative.setOnClickListener(this);
+        inquiry_Signin_Relative.setOnClickListener(this);
+    }
+
 
     /**
      *组件的点击事件
@@ -40,17 +50,15 @@ public class ToolsFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.toolsf_middle_initialsignin_relative:
-                Intent intent=new Intent(getActivity(), InitiateSigninActivity.class);
-                startActivity(intent);
+                Intent intoInitiateSignin=new Intent(getActivity(), InitiateSigninActivity.class);
+                startActivity(intoInitiateSignin);
                 break;
+            case R.id.toolsf_middle_inquiry_signin_relative:
+                Intent intoInquirySignin=new Intent(getActivity(), SigninListActivity.class);
+                startActivity(intoInquirySignin);
         }
     }
 
-    /**
-     * 给组件添加事件
-     */
-    public void addListener(){
-        initialSignin_Relative.setOnClickListener(this);
-    }
+
 
 }
