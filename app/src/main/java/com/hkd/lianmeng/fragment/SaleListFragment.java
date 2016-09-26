@@ -9,17 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.Abstract.GoodsCallback;
 import com.hkd.lianmeng.base.BaseApplication;
-
-import java.io.IOException;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 
 public class SaleListFragment extends Fragment {
@@ -45,7 +41,6 @@ public class SaleListFragment extends Fragment {
 
     public void getJson() {
 
-        // http://localhost:8080/MFace/goodsinfo_getUsersGoodsInfo?params={%22phone%22:%2215670702651%22}
         String url = "http://localhost:8080/MFace/goodsinfo_getUsersGoodsInfo?params={\"goodscity\":" +
                 "" +"\""+ BaseApplication.mSearchConditions.getCity()+"\"" + ",\"goodsuniversity\":" +
                 "" +"\""+ BaseApplication.mSearchConditions.getUniversity()+"\"" + ",\"goodscampus\":" +
@@ -53,27 +48,25 @@ public class SaleListFragment extends Fragment {
                 "" +"\""+ BaseApplication.mSearchConditions.getClassification()+"\"" + ",\"goodsspecies\":" +
                 "" +"\""+ BaseApplication.mSearchConditions.getSpecies()+"\"" +
                 "}";
-        //创建okHttpClient对象
-        OkHttpClient mOkHttpClient = new OkHttpClient();
-        //创建一个Request
-        final Request request = new Request.Builder()
-                .url(url)
-                .build();
-        //new call
-        Call call = mOkHttpClient.newCall(request);
-        //请求加入调度
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.i("gqf", "服务器响应失败" );
-            }
+        Log.i("gqf",url);
+        String goodsUrl="http://localhost:8080/MFace/";//goodsinfo_getUsersGoodsInfo/";
+        String meituan="http://www.meituan.com/api/v2/beijing/deals";
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                goodsJson = response.body().string();
-                Log.i("gqf", "aaaaaaaaaaaaaaa" + goodsJson);
-            }
-        });
+        OkHttpUtils
+                .post()
+                .url(goodsUrl)
+                .build()
+                .execute(new GoodsCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        Log.i("gqf","onError");
+                    }
+
+                    @Override
+                    public void onResponse(String s, int i) {
+                        Log.i("gqf","onResponse"+s);
+                    }
+                });
 
     }
 
