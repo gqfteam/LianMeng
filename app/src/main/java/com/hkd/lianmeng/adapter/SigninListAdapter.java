@@ -65,6 +65,7 @@ public class SigninListAdapter extends BaseAdapter {
             mHolder = new ViewHolder(arg1);
             //设置地点本框获取焦点 从而实现跑马灯效果
             mHolder.tvPlace.setSelected(true);
+            mHolder.tvPlace.setClickable(true);
             //mHolder.tvPlace.refreshDrawableState();
             arg1.setTag(mHolder);
 

@@ -49,11 +49,7 @@
 
 
         <activity android:name="com.hkd.lianmeng.Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
         </activity>
         <activity
@@ -68,6 +64,11 @@
 
         </activity>
         <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
 
         </activity>
