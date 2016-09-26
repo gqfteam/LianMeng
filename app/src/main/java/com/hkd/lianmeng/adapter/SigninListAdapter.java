@@ -25,7 +25,7 @@ public class SigninListAdapter extends BaseAdapter {
     private ArrayList<SigninInfo> datas;//数据源
     private Context mContext;
     private LayoutInflater layoutInflater;
-    private ViewHolder mHolder;
+
 
 
     public void update(ArrayList<SigninInfo> datas) {
@@ -57,19 +57,30 @@ public class SigninListAdapter extends BaseAdapter {
 
 
     public View getView(int arg0, View arg1, ViewGroup arg2) {
-
+        ViewHolder mHolder;
         if (arg1 == null) {
 
             arg1 = layoutInflater.inflate(R.layout.temporary_list_item,
                     null);
             mHolder = new ViewHolder(arg1);
+            //设置地点本框获取焦点 从而实现跑马灯效果
+            mHolder.tvPlace.setSelected(true);
+            //mHolder.tvPlace.refreshDrawableState();
             arg1.setTag(mHolder);
 
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
 
+        //测试获取焦点问题   后期可以删除
+        mHolder.btSigninButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("----button----");
+            }
+        });
 
+    //模拟数据  后期可以删除
         if (arg0==0){
             mHolder.buttonPanel.setVisibility(View.VISIBLE);
             mHolder.imgPanel.setVisibility(View.GONE);
@@ -84,7 +95,6 @@ public class SigninListAdapter extends BaseAdapter {
             mHolder.imgPanel.setVisibility(View.VISIBLE);
 
             }
-
 
 
         return arg1;

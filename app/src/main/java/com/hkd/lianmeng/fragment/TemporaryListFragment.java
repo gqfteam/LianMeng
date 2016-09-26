@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.johe.lianmengdemo.R;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
  * jyq
  * 临时签到列表
  */
-public class TemporaryListFragment extends Fragment {
+public class TemporaryListFragment extends Fragment{
 
     @Bind(R.id.temporary_list)
     ListView temporaryList;
@@ -35,6 +36,12 @@ public class TemporaryListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_temporary_list, container, false);
         ButterKnife.bind(this, view);
         init();
+        temporaryList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("-----list-----"+position);
+            }
+        });
         return view;
     }
 
