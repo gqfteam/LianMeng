@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 /**
  * Created by johe on 2016/9/26.
+ * gqf
+ * 商品模型
  */
 public class Goods {
     int id;

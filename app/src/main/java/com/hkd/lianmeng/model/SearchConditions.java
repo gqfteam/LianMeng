@@ -2,6 +2,8 @@ package com.hkd.lianmeng.model;
 
 /**
  * Created by johe on 2016/9/26.
+ * gqf
+ * 商品选择器参数
  */
 public class SearchConditions {
 

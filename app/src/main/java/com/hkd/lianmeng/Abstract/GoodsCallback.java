@@ -8,6 +8,7 @@ import okhttp3.Response;
 
 /**
  * Created by johe on 2016/9/26.
+ * gqf
  */
 public abstract class GoodsCallback extends Callback<String>{
     @Override

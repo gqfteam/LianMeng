@@ -17,7 +17,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 
-
+/**
+ * gqf
+ * 商品列表fragment
+ */
 public class SaleListFragment extends Fragment {
 
     String goodsJson;

@@ -2,6 +2,8 @@ package com.hkd.lianmeng.model;
 
 /**
  * Created by johe on 2016/9/22.
+ * gqf
+ * 登录用户
  */
 public class LoginUser extends User{
     private String password;//登录用户密码
