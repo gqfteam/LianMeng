@@ -68,16 +68,11 @@
         <activity android:name="com.hkd.lianmeng.Activity.SchoolinfoNewListActivity"></activity>
             android:theme="@style/AppTheme.NoActionBar">
         <activity android:name="com.hkd.lianmeng.Activity.ContactActivity">
-
         </activity>
         <activity android:name="com.hkd.lianmeng.Activity.LoginActivity">
-
         </activity>
         <activity android:name="com.hkd.lianmeng.Activity.ChatActivity">
-
         </activity>
-        </application>
         <activity android:name="com.hkd.lianmeng.Activity.SigninListActivity"></activity>
     </application>
-
 </manifest>

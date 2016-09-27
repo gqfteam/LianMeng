@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
-
+import com.hyphenate.easeui.controller.EaseUI;
 import com.hkd.lianmeng.model.LoginUser;
 import com.hkd.lianmeng.model.User;
 import com.hkd.lianmeng.tools.LoginUserInfoUtils;
@@ -29,7 +29,6 @@ public class BaseApplication extends Application {
     public static Context applicationContext;
     //public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
     public static boolean isLogin=false;
-
     public static User mUser;
     private LoginUserInfoUtils mLoginUserInfoUtils;
     @Override
@@ -48,6 +47,8 @@ public class BaseApplication extends Application {
         EMOptions options = new EMOptions();
         // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAcceptInvitationAlways(false);
+        //初始化EaseUI
+        EaseUI.getInstance().init(applicationContext, options);
         options.setAutoLogin(false);
         //建议初始化SDK的时候设置成每个会话默认load一条消息，节省加载会话的时间，方法为：
         //options.setNumberOfMessagesLoaded(10);
@@ -70,6 +71,8 @@ public class BaseApplication extends Application {
 
         //判断用户是否登录过
         isLogin();
+
+
     }
     private EMMessageListener msgListener;
     private  void getMsg(){
