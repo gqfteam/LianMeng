@@ -82,18 +82,6 @@ public class MsgListAdapter extends BaseAdapter {
         return arg1;
     }
 
-   /* @OnClick(R.id.msg_lItem_lLaout)
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.msg_lItem_lLaout:
-                Toast.makeText(mContext, "点击了聊天列表", Toast.LENGTH_SHORT).show();
-                mContext.startActivity(new Intent(mContext, ChatActivity.class));
-                break;
-        }
-
-    }*/
-
-
     static class ViewHolder {
         @Bind(R.id.msg_list_item_img)
         ImageView msgListItemImg;

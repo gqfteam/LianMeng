@@ -1,16 +1,21 @@
 package com.hkd.lianmeng.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.Activity.ChatActivity;
 import com.hkd.lianmeng.adapter.FriendsListAdapter;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hkd.lianmeng.tools.DemoHelper;
@@ -22,6 +27,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
 
 /**
  * gqf
@@ -39,6 +45,7 @@ public class FriendListFragment extends Fragment {
     private FriendsListAdapter mFriendsListAdapter;
     private Thread mThread;
     private DemoHelper demoHelper;
+    private Context mContext;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +53,8 @@ public class FriendListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
         ButterKnife.bind(this, view);
+        mContext = getActivity();
+
         mThread=new Thread(new Runnable() {
             @Override
             public void run() {
@@ -73,6 +82,20 @@ public class FriendListFragment extends Fragment {
             super.handleMessage(msg);
         }
     };
+
+//    public void intentChatFragment(){
+//        friendListAllfriends.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Log.i("wjd","friendName:"+usernames.get(i));
+//
+//                        Intent _intent = new Intent(getActivity(), ChatActivity.class);
+//                        _intent.putExtra("friendName",usernames.get(i));
+//                        startActivity(_intent);
+//            }
+//        });
+//    }
+
     public void initSideBar(){
         friendListSidebar.setTextView(friendListDialog);
         // 设置右侧触摸监听
@@ -90,11 +113,11 @@ public class FriendListFragment extends Fragment {
             }
         });
     }
-    public void initList(List<String> usernames){
+
+    public void initList(final List<String> usernames){
         ArrayList<UserFriend> users=new ArrayList<>();
         for(int i=0;i<usernames.size();i++){
-
-
+            Log.i("wjd","friendName:"+usernames.get(i));
             UserFriend user=new UserFriend();
             user.setUserName(usernames.get(i));
             users.add(user);
@@ -103,6 +126,25 @@ public class FriendListFragment extends Fragment {
         users=demoHelper.filledData(users);
         mFriendsListAdapter=new FriendsListAdapter(getContext(),users);
         friendListAllfriends.setAdapter(mFriendsListAdapter);
+        friendListAllfriends.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("wjd","friendName:"+usernames.get(i));
+                Intent _intent = new Intent(getActivity(), ChatActivity.class);
+                _intent.putExtra("friendName",usernames.get(i));
+                _intent.putExtra("FriendList_to_ChatFragment",true);
+                startActivity(_intent);
+            }
+        });
+    }
+
+    @OnItemClick(R.id.friend_list_allfriends)
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Log.i("wjd","friendName:"+usernames.get(i));
+        Intent _intent = new Intent(getActivity(), ChatActivity.class);
+        _intent.putExtra("friendName",usernames.get(i));
+        startActivity(_intent);
+
     }
     @Override
     public void onDestroyView() {
