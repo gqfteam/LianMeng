@@ -51,7 +51,6 @@ public class ContactActivity extends FragmentActivity {
             contactTopMsgRad.setChecked(true);
             contactTopFriendRad.setChecked(false);
 
-
             msgListFragment = new MsgListFragment();
             getSupportFragmentManager().beginTransaction().add(R.id.contact_fragment, msgListFragment).commit();
 

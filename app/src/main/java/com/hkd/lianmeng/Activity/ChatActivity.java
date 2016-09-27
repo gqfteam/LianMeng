@@ -1,55 +1,49 @@
 package com.hkd.lianmeng.Activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
 
 import com.example.johe.lianmengdemo.R;
-import com.hkd.lianmeng.adapter.ChatListAdapter;
-import com.hkd.lianmeng.model.UserFriend;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
+import com.hyphenate.easeui.EaseConstant;
+import com.hyphenate.easeui.controller.EaseUI;
+import com.hyphenate.easeui.ui.EaseChatFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import static com.hyphenate.easeui.EaseConstant.CHATTYPE_SINGLE;
 
 /**
  * Created by Administrator on 2016/9/22.
  */
 
-public class ChatActivity extends Activity {
+public class ChatActivity extends FragmentActivity {
 
-    @Bind(R.id.chat_back_txt)
-    TextView chatBackTxt;
-    @Bind(R.id.chat_listView)
-    ListView chatListView;
-    @Bind(R.id.chatActivity_contack_txt)
-    TextView chatActivityContackTxt;
+//    @Bind(R.id.chat_back_txt)
+//    TextView chatBackTxt;
+//    @Bind(R.id.chat_listView)
+//    ListView chatListView;
+//    @Bind(R.id.chatActivity_contack_txt)
+//    TextView chatActivityContackTxt;
     private Context mContext;
-    private ChatListAdapter chatListAdapter;
     private List<EMMessage> mMessage;
-    private ArrayList<UserFriend> mUserFriends;
-    private UserFriend userFriend;
-    private UserFriend mUserFriend;
     private Thread mThread;
     private String mFriendName;
     private EMConversation mConversation;
     private int mIndex = -1;
+    private EaseUI easeUI;
+    private EaseChatFragment chatFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
-        ButterKnife.bind(ChatActivity.this);
+        setContentView(R.layout.chat_content);
+//        ButterKnife.bind(ChatActivity.this);
 
         mThread = new Thread(new Runnable() {
             @Override
@@ -60,6 +54,16 @@ public class ChatActivity extends Activity {
                     mConversation = EMClient.getInstance().chatManager().getConversation(mFriendName);
                     //获取所有的会话
                     mMessage = mConversation.getAllMessages();
+
+//                    //get easeui instance
+//                    easeUI = EaseUI.getInstance();
+//                    //需要EaseUI库显示用户头像和昵称设置此provider
+//                    easeUI.setUserProfileProvider(new EaseUI.EaseUserProfileProvider() {
+//                        @Override
+//                        public EaseUser getUser(String username) {
+//                            return getUserInfo(username);
+//                        }
+//                    });
 
 
                 } catch (Exception e) {
@@ -90,17 +94,18 @@ public class ChatActivity extends Activity {
     private void initList() {
         mContext = ChatActivity.this;
         //设置头部联系对象
-        chatActivityContackTxt.setText(mFriendName);
+//        chatActivityContackTxt.setText(mFriendName);
 
-        chatListAdapter = new ChatListAdapter(mContext, mMessage);
-        chatListView.setAdapter(chatListAdapter);
+        //new出EaseChatFragment或其子类的实例
+        if(chatFragment==null){
+            chatFragment = new EaseChatFragment();
+        }
+        //传入参数
+        Bundle _args = new Bundle();
+        _args.putInt(EaseConstant.EXTRA_CHAT_TYPE, CHATTYPE_SINGLE);
+        _args.putString(EaseConstant.EXTRA_USER_ID, mFriendName);
+        chatFragment.setArguments(_args);
+        getSupportFragmentManager().beginTransaction().add(R.id.container, chatFragment).commit();
 
     }
-
-    @OnClick(R.id.chat_back_txt)
-    public void onClick() {
-        finish();
-    }
-
-
 }

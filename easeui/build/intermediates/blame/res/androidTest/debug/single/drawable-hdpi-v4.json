@@ -364,12 +364,12 @@
         "source": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_chatting_setmode_keyboard_btn_normal.png"
     },
     {
-        "merged": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_7.png",
-        "source": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_7.png"
-    },
-    {
         "merged": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_login_error_icon.png",
         "source": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_login_error_icon.png"
+    },
+    {
+        "merged": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_7.png",
+        "source": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_7.png"
     },
     {
         "merged": "C:\\team\\LianMeng\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_14.png",
