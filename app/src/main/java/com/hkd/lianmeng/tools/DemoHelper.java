@@ -9,6 +9,8 @@ import java.util.Date;
 
 /**
  * Created by johe on 2016/9/21.
+ * gqf
+ * 根据首字母排序
  */
 public class DemoHelper {
     private static class holder {

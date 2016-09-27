@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.base.BaseApplication;
+import com.hkd.lianmeng.model.SaleChooseModel;
 
 import java.util.ArrayList;
 
@@ -21,22 +23,85 @@ import butterknife.ButterKnife;
  */
 public class ChooseSaleTwoAdapter extends BaseAdapter {
 
+
+    private SaleChooseModel saleChooseModel;
     private ArrayList<String> datas;//数据源
     private Context mContext;
     private LayoutInflater layoutInflater;
     private ViewHolder mHolder;
+    private String mSaleChooseModelName;
 
-
-    public void update(ArrayList<String> datas) {
-        this.datas = datas;
-        this.notifyDataSetChanged();
+    public String getmSaleChooseModelName() {
+        return mSaleChooseModelName;
     }
 
-    public ChooseSaleTwoAdapter(Context context, ArrayList<String> datas) {
-        this.mContext = context;
-        this.datas = datas;
-        this.layoutInflater = LayoutInflater.from(context);
+    public void setmSaleChooseModelName(String mSaleChooseModelName) {
 
+        this.mSaleChooseModelName = mSaleChooseModelName;
+    }
+
+    int chooseid;
+
+    public int getChooseid() {
+        return chooseid;
+    }
+
+    public void setChooseid(int chooseid) {
+        this.chooseid = chooseid;
+    }
+
+    String city="洛阳市";
+
+    String campus="西苑校区";
+
+    String species="全部";
+
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCampus() {
+        return campus;
+    }
+
+    public void setCampus(String campus) {
+        this.campus = campus;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public void update(SaleChooseModel datas) {
+
+        if(datas!=null) {
+            saleChooseModel=datas;
+            this.datas = datas.getHave();
+        }else{
+            this.datas=null;
+        }
+
+        this.notifyDataSetChanged();
+
+    }
+
+    public ChooseSaleTwoAdapter(Context context,SaleChooseModel datas) {
+        this.mContext = context;
+        saleChooseModel=datas;
+        this.datas = saleChooseModel.getHave();
+        this.layoutInflater = LayoutInflater.from(context);
+        city= BaseApplication.mSearchConditions.getCity();
+        campus=BaseApplication.mSearchConditions.getCampus();
+        species=BaseApplication.mSearchConditions.getSpecies();
     }
 
     public int getCount() {
@@ -69,8 +134,20 @@ public class ChooseSaleTwoAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
+
+        if(saleChooseModel.getName().equals(mSaleChooseModelName)) {
+            if ((datas.get(arg0).equals(city) && chooseid == 0)
+                    || (datas.get(arg0).equals(campus) && chooseid == 1)
+                    || (datas.get(arg0).equals(species) && chooseid == 2)) {
+                mHolder.choseTwoItemImg.setVisibility(View.VISIBLE);
+            } else {
+                mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
+            }
+        }else{
+            mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
+        }
         mHolder.choseTwoItemTxt.setText(datas.get(arg0)+"");
-        mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
+
         return arg1;
     }
 

@@ -51,8 +51,9 @@
             android:layout_marginBottom="@dimen/two_margin_item"/>
         <CheckBox
             android:layout_width="@dimen/four_height_item"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/five_margin_item"
             android:layout_alignEnd="@+id/items_phonenumber"
+            android:layout_marginBottom="@dimen/two_margin_item"
             android:background="@drawable/sale_list_collection_star_sel"
             android:button="@null"
             android:id="@+id/button"

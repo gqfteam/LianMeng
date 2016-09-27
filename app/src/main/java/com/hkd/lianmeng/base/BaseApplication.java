@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.hkd.lianmeng.model.LoginUser;
+import com.hkd.lianmeng.model.SearchConditions;
 import com.hkd.lianmeng.model.User;
 import com.hkd.lianmeng.tools.LoginUserInfoUtils;
 import com.hyphenate.EMCallBack;
@@ -14,9 +15,16 @@ import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.cookie.CookieJarImpl;
+import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
+import com.zhy.http.okhttp.https.HttpsUtils;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 
 /**
@@ -29,15 +37,35 @@ public class BaseApplication extends Application {
     public static Context applicationContext;
     //public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
     public static boolean isLogin=false;
+    public static SearchConditions mSearchConditions;
     public static User mUser;
     private LoginUserInfoUtils mLoginUserInfoUtils;
     @Override
     public void onCreate() {
         super.onCreate();
         applicationContext = this;
+        mSearchConditions=new SearchConditions();
         initHuanXinParams();
+        initOkHttp();
     }
+    /**
+     * 初始化okhttp
+     */
+    private void initOkHttp(){
+        CookieJarImpl cookieJar = new CookieJarImpl(new PersistentCookieStore(getApplicationContext()));
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                //                .addInterceptor(new LoggerInterceptor("TAG"))
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+                .cookieJar(cookieJar)
+                //其他配置
+                .build();
 
+        OkHttpUtils.initClient(okHttpClient);
+
+    }
     /**
      * 初始化环信
      */
@@ -71,6 +99,9 @@ public class BaseApplication extends Application {
 
         //判断用户是否登录过
         isLogin();
+
+
+
 
 
     }
