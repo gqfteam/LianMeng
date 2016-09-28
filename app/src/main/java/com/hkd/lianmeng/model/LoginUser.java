@@ -8,6 +8,10 @@ package com.hkd.lianmeng.model;
 public class LoginUser extends User{
     private String password;//登录用户密码
 
+    public LoginUser(String username) {
+        super(username);
+    }
+
     public String getPassword() {
         return password;
     }

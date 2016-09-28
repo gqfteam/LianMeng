@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 
 import com.example.johe.lianmengdemo.R;
 import com.hyphenate.chat.EMClient;
@@ -51,20 +50,16 @@ public class ChatActivity extends FragmentActivity {
         mIndex = getIntent().getIntExtra("index", -1);
         mFriendName = getIntent().getStringExtra("friendName");
         mFriendList_to_ChatFragment_flag= getIntent().getBooleanExtra("FriendList_to_ChatFragment",false);
-        Log.i("wjd","mFriendName:"+mFriendName);
-        Log.i("wjd","mFriendList_to_ChatFragment_flag:"+mFriendList_to_ChatFragment_flag);
+//        Log.i("wjd","mFriendName:"+mFriendName);
+//        Log.i("wjd","mFriendList_to_ChatFragment_flag:"+mFriendList_to_ChatFragment_flag);
         if(mFriendList_to_ChatFragment_flag){
             goInChat();
         }else{
-
             thread();
             mThread.start();
         }
 
-
-
     }
-
     private void thread() {
 
         mThread = new Thread(new Runnable() {
@@ -76,6 +71,8 @@ public class ChatActivity extends FragmentActivity {
                     //获取所有的会话
 
                     mMessage = mConversation.getAllMessages();
+
+                   // EaseUser easeUser = new EaseUser(hxIdFrom);
 
 
                 } catch (Exception e) {

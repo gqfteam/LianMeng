@@ -84,7 +84,7 @@ public class LoginActivity extends Activity {
                 Log.d("main", "登录聊天服务器成功！");
 
                 //保存用户名和密码在本地
-                mLoginUser=new LoginUser();
+                mLoginUser=new LoginUser(strAcct);
                 mLoginUser.setUserName(strAcct);
                 mLoginUser.setPassword(strPwd);
                 mLoginUserInfoUtils=LoginUserInfoUtils.getLoginUserInfoUtils();

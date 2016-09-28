@@ -118,7 +118,7 @@ public class FriendListFragment extends Fragment {
         ArrayList<UserFriend> users=new ArrayList<>();
         for(int i=0;i<usernames.size();i++){
             Log.i("wjd","friendName:"+usernames.get(i));
-            UserFriend user=new UserFriend();
+            UserFriend user=new UserFriend(usernames.get(i));
             user.setUserName(usernames.get(i));
             users.add(user);
         }
@@ -129,7 +129,7 @@ public class FriendListFragment extends Fragment {
         friendListAllfriends.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.i("wjd","friendName:"+usernames.get(i));
+                //Log.i("wjd","friendName:"+usernames.get(i));
                 Intent _intent = new Intent(getActivity(), ChatActivity.class);
                 _intent.putExtra("friendName",usernames.get(i));
                 _intent.putExtra("FriendList_to_ChatFragment",true);

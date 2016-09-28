@@ -1,6 +1,7 @@
 package com.hkd.lianmeng.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class MsgListAdapter extends BaseAdapter {
         if (datas == null) {
             return 0;
         }
+        Log.d("wjd","datas.size():"+datas.size());
         return datas.size();
     }
 
@@ -71,11 +73,15 @@ public class MsgListAdapter extends BaseAdapter {
         } else {
             mHolder = (ViewHolder) arg1.getTag();
         }
-        mHolder.msgListItemName.setText(datas.get(arg0).getUserName());
-        EMMessageBody eb = datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getBody();
-        mHolder.msgListItemMsg.setText(eb.toString());
-        String time = mDemoHelper.getTimeLongToString(datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getMsgTime());
-        mHolder.msgListItemTime.setText(time);
+
+        mHolder.msgListItemName.setText(datas.get(arg0).getNick());
+        if(datas.size()!=0){
+
+            EMMessageBody eb = datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getBody();
+            mHolder.msgListItemMsg.setText(eb.toString());
+            String time = mDemoHelper.getTimeLongToString(datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getMsgTime());
+            mHolder.msgListItemTime.setText(time);
+        }
 
         return arg1;
     }

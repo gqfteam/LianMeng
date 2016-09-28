@@ -15,6 +15,10 @@ public class UserFriend extends User{
 
     private int mesCount;
 
+    public UserFriend(String username) {
+        super(username);
+    }
+
     public int getMesCount() {
         return mesCount;
     }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +56,7 @@ public class MsgListFragment extends Fragment {
             public void run() {
                 try {
                     conversations = EMClient.getInstance().chatManager().getAllConversations();
-
+                    Log.i("wjd","conversations.size():"+conversations.size());
 
                 } catch (Exception e) {
                 }
@@ -92,7 +93,9 @@ public class MsgListFragment extends Fragment {
             friendsname.add(user);
         }
         for (int i = 0; i < conversations.size(); i++) {
-            mUserFriend = new UserFriend();
+            mUserFriend = new UserFriend(friendsname.get(i));
+            //设置昵称
+            //mUserFriend.setNick("111");
             mUserFriend.setUserName(friendsname.get(i));
             mUserFriend.setMessages(conversations.get(friendsname.get(i)).getAllMessages());
             mUserFriends.add(mUserFriend);
@@ -104,7 +107,9 @@ public class MsgListFragment extends Fragment {
     @OnItemClick(R.id.contact_msg_list)
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(mContext,ChatActivity.class);
-        intent.putExtra("friendName",mUserFriends.get(i).getMessages().get(i).getUserName());
+        Log.i("wjd","mUserFriends.size():"+mUserFriends.size());
+        Log.i("wjd","mUserFriends.get(i).getMessages():"+mUserFriends.get(i).getMessages().size());
+        intent.putExtra("friendName",mUserFriends.get(i).getUserName());
         intent.putExtra("index",i);
         startActivity(intent);
 
