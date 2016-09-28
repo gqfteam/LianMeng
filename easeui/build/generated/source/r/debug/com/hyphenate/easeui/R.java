@@ -564,7 +564,7 @@ containing a value of this type.
         public static int loading_layout=0x7f09000a;
         public static int mentioned=0x7f090029;
         public static int message=0x7f09002a;
-        public static int message_list=0x7f090018;
+        public static int message_list=0x7f090019;
         public static int mic_image=0x7f090067;
         public static int msg_state=0x7f090028;
         public static int msg_status=0x7f090042;
@@ -613,7 +613,7 @@ containing a value of this type.
         public static int tv_userid=0x7f090030;
         public static int unread_msg_number=0x7f090025;
         public static int vPager=0x7f090014;
-        public static int voice_recorder=0x7f090019;
+        public static int voice_recorder=0x7f090018;
     }
     public static final class layout {
         public static int ease_activity_baidumap=0x7f030000;
