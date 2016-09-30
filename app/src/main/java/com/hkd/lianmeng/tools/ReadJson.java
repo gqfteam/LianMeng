@@ -1,5 +1,7 @@
 package com.hkd.lianmeng.tools;
 
+import com.google.gson.Gson;
+import com.hkd.lianmeng.model.Goods;
 import com.hkd.lianmeng.model.SaleChooseModel;
 
 import org.json.JSONArray;
@@ -61,5 +63,25 @@ public class ReadJson {
 
         return scms;
     }
+    /**
+     * 返回goods列表
+     */
+    public ArrayList<Goods> readGoodsJson(String goodsJson){
+        ArrayList<Goods> mGoodses=new ArrayList<Goods>();
+        try {
+            JSONObject datas = new JSONObject(goodsJson);
+            JSONArray Goods=datas.getJSONArray("msg");
+            Gson gson=new Gson();
+            for(int i=0;i<Goods.length();i++) {
+                Goods goods = gson.fromJson(Goods.get(i).toString(), Goods.class);
+                mGoodses.add(goods);
+            }
 
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return mGoodses;
+    }
 }

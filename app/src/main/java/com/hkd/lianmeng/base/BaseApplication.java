@@ -73,11 +73,12 @@ public class BaseApplication extends Application {
     private void initHuanXinParams() {
 
         EMOptions options = new EMOptions();
+        options.setAutoLogin(false);
         // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAcceptInvitationAlways(false);
         //初始化EaseUI
         EaseUI.getInstance().init(applicationContext, options);
-        options.setAutoLogin(false);
+
         //建议初始化SDK的时候设置成每个会话默认load一条消息，节省加载会话的时间，方法为：
         //options.setNumberOfMessagesLoaded(10);
         int pid = android.os.Process.myPid();
@@ -167,7 +168,7 @@ public class BaseApplication extends Application {
     @Override
     public void onTerminate() {
         // 程序终止的时候执行
-        EMClient.getInstance().logout(true);
+        //EMClient.getInstance().logout(true);
         super.onTerminate();
     }
     /**
@@ -191,7 +192,31 @@ public class BaseApplication extends Application {
             mLoginUser = mLoginUserInfoUtils.getLoginUserInfo(applicationContext, LoginUserInfoUtils.KEY);
             if(mLoginUser!=null){
                 mUser.setUserName(mLoginUser.getUserName());
-                isLogin=true;
+                //这里先设置每回打开app前都要退出登录
+                Log.i("gqf","用户登录过");
+                isLogin=false;
+                EMClient.getInstance().logout(true, new EMCallBack() {
+
+                    @Override
+                    public void onSuccess() {
+                        // TODO Auto-generated method stub
+                        Log.i("gqf","退出登录");
+                    }
+
+                    @Override
+                    public void onProgress(int progress, String status) {
+                        // TODO Auto-generated method stub
+                        Log.i("gqf","退出登录中");
+                    }
+
+                    @Override
+                    public void onError(int code, String message) {
+                        // TODO Auto-generated method stub
+                        Log.i("gqf","退出登录失败");
+                    }
+                });
+            }else{
+                Log.i("gqf","用户没有登录");
             }
 
         }
