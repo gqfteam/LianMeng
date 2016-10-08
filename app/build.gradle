@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.example.johe.lianmengdemo"
+        applicationId "com.hkd.lianmeng"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
@@ -40,5 +40,7 @@ dependencies {
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile project(':easeui')
+    compile files('libs/jpush-android-2.1.9.jar')
+    compile files('libs/jpush-client-3.2.9.jar')
 
 }

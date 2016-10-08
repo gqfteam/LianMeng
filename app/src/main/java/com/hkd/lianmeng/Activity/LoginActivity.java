@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.model.LoginUser;
 import com.hkd.lianmeng.tools.LoginUserInfoUtils;

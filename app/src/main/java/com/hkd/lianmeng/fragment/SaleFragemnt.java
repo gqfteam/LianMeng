@@ -9,9 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ContactActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.base.BaseApplication;
 
 import butterknife.Bind;

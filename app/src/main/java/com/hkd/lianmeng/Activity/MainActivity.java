@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.RadioButton;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.fragment.MeFragment;
 import com.hkd.lianmeng.fragment.SaleFragemnt;

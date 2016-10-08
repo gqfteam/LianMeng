@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.hyphenate.easeui.controller.EaseUI;
 import com.hkd.lianmeng.model.LoginUser;
 import com.hkd.lianmeng.model.SearchConditions;
@@ -24,6 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import cn.jpush.android.api.JPushInterface;
 import okhttp3.OkHttpClient;
 
 
@@ -47,6 +50,20 @@ public class BaseApplication extends Application {
         mSearchConditions=new SearchConditions();
         initHuanXinParams();
         initOkHttp();
+
+        /*
+        * 柳亚婷  极光推送
+        */
+        //设置极光推送的Debug模式开启，这样就可以在日志当中查看相应的输出，就可以知道
+        //我们项目与极光推送的一些链接的一些状态
+        JPushInterface.setDebugMode(true);
+        //初始化代码
+        Toast.makeText(this,"aaaaa",Toast.LENGTH_LONG).show();
+        JPushInterface.init(this);
+       /*
+       * 极光推送设置结束
+       */
+
     }
     /**
      * 初始化okhttp

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.SettingListAdapter;
 import com.hkd.lianmeng.base.BaseApplication;
 import com.hyphenate.chat.EMClient;

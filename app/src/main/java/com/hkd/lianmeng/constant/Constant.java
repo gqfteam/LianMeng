@@ -1,6 +1,7 @@
 package com.hkd.lianmeng.constant;
 
-import com.example.johe.lianmengdemo.R;
+
+import com.hkd.lianmeng.R;
 
 /**
  * Created by Administrator on 2016/9/18.

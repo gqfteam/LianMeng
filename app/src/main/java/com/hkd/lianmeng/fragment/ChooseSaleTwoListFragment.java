@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.ChooseSaleOneAdapter;
 import com.hkd.lianmeng.adapter.ChooseSaleTwoAdapter;
 import com.hkd.lianmeng.base.BaseApplication;

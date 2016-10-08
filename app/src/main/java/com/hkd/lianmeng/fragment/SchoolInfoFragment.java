@@ -13,10 +13,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ContactActivity;
 import com.hkd.lianmeng.Activity.SchoolinfoNewListActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.constant.Constant;
 import com.hkd.lianmeng.model.Sentence;
 import com.hkd.lianmeng.view.CarouselView;

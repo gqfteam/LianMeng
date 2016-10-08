@@ -11,9 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.SettingActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.MeListAdapter;
 
 import java.util.ArrayList;

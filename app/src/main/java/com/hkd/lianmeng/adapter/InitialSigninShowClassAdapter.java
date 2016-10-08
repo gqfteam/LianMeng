@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
