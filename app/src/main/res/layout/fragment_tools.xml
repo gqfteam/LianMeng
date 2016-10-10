@@ -178,6 +178,7 @@
                    <RelativeLayout
                        style="@style/horizontal_weight_1"
                        android:gravity="center"
+                       android:id="@+id/toolsf_middle_inquiry_goods_relative"
                        >
                        <TextView
                            style="@style/toolspage_btn_picandtext"
