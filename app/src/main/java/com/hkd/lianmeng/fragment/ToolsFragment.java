@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.InitiateSigninActivity;
 import com.hkd.lianmeng.Activity.SigninListActivity;
+import com.hkd.lianmeng.R;
 
 
 public class ToolsFragment extends Fragment implements View.OnClickListener{

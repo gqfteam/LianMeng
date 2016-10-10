@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.model.Goods;
 
 import java.util.ArrayList;

@@ -1,13 +1,14 @@
 package com.hkd.lianmeng.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.model.SaleChooseModel;
 
@@ -135,11 +136,12 @@ public class ChooseSaleTwoAdapter extends BaseAdapter {
             mHolder = (ViewHolder) arg1.getTag();
         }
 
-        if(saleChooseModel.getName().equals(mSaleChooseModelName)) {
+        if(saleChooseModel.getHave().get(arg0).equals(mSaleChooseModelName)) {
             if ((datas.get(arg0).equals(city) && chooseid == 0)
                     || (datas.get(arg0).equals(campus) && chooseid == 1)
                     || (datas.get(arg0).equals(species) && chooseid == 2)) {
                 mHolder.choseTwoItemImg.setVisibility(View.VISIBLE);
+                Log.i("gqf","gqf"+saleChooseModel.getHave().get(arg0)+mSaleChooseModelName);
             } else {
                 mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
             }
@@ -147,6 +149,7 @@ public class ChooseSaleTwoAdapter extends BaseAdapter {
             mHolder.choseTwoItemImg.setVisibility(View.INVISIBLE);
         }
         mHolder.choseTwoItemTxt.setText(datas.get(arg0)+"");
+        Log.i("gqf","gqf"+mSaleChooseModelName);
 
         return arg1;
     }

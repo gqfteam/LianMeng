@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.fragment.FriendListFragment;
 import com.hkd.lianmeng.fragment.MsgListFragment;
 

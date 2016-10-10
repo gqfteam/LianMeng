@@ -12,9 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ChatActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.MsgListAdapter;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hyphenate.chat.EMClient;

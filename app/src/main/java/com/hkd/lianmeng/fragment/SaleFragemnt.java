@@ -9,9 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ContactActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.base.BaseApplication;
 
 import butterknife.Bind;
@@ -93,6 +92,7 @@ public class SaleFragemnt extends Fragment {
                     CBShopCity.setChecked(false);
                     CBShopCampus.setChecked(false);
                     CBShopClassification.setChecked(false);
+                    initChackBox();
                 }
             });
         } else if (cb.isChecked() == false) {
@@ -111,7 +111,6 @@ public class SaleFragemnt extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.CB_shop_city:
-
                 CBShopCampus.setChecked(false);
                 CBShopClassification.setChecked(false);
                 showChooseSaleListFragment(CBShopCity, 0);

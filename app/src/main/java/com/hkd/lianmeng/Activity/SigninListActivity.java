@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.fragment.DailyListFragment;
 import com.hkd.lianmeng.fragment.TemporaryListFragment;
 

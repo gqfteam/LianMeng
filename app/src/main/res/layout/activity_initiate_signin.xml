@@ -331,6 +331,7 @@
             android:paddingRight="@dimen/two_margin_item">
 
             <TextView
+                android:id="@+id/initialsignin_bottom_initialsignin_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/initialsignin_bottom_btn_ok"

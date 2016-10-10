@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.SaleListAdapter;
 import com.hkd.lianmeng.base.BaseApplication;
 import com.hkd.lianmeng.model.Goods;

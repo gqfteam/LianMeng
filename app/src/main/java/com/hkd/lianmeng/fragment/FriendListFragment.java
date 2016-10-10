@@ -13,9 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.example.johe.lianmengdemo.R;
 import com.hkd.lianmeng.Activity.ChatActivity;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.FriendsListAdapter;
 import com.hkd.lianmeng.model.UserFriend;
 import com.hkd.lianmeng.tools.DemoHelper;

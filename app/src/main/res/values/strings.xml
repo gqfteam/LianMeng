@@ -80,7 +80,6 @@
     <string name="initialsignin_top_local_hint">请输入详细地址</string>
 
 
-
-
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_add_user_goods">AddUserGoodsActivity</string>
 </resources>

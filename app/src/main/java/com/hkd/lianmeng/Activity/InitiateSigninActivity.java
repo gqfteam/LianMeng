@@ -11,17 +11,27 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.johe.lianmengdemo.R;
+import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.InitialSigninShowClassAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import cn.jpush.api.JPushClient;
+import cn.jpush.api.common.resp.APIConnectionException;
+import cn.jpush.api.common.resp.APIRequestException;
+import cn.jpush.api.push.PushResult;
+import cn.jpush.api.push.model.Message;
+import cn.jpush.api.push.model.Platform;
+import cn.jpush.api.push.model.PushPayload;
+import cn.jpush.api.push.model.audience.Audience;
+import cn.jpush.api.push.model.notification.Notification;
+
 public class InitiateSigninActivity extends AppCompatActivity implements View.OnClickListener {
     ArrayList<HashMap<String,String>> classList;
     InitialSigninShowClassAdapter showClassAdapter;
     ListView showclass_listview;
-    TextView back_textview,cancel_btn;
+    TextView back_textview,cancel_btn,initialsignin_btn;
 
 
 
@@ -69,6 +79,7 @@ public class InitiateSigninActivity extends AppCompatActivity implements View.On
         showclass_listview= (ListView) findViewById(R.id.initialsignin_bottom_showclass_listview);
         back_textview= (TextView) findViewById(R.id.initialsignin_top_back_textview);
         cancel_btn= (TextView) findViewById(R.id.initialsignin_bottom_cancel_btn);
+        initialsignin_btn= (TextView) findViewById(R.id.initialsignin_bottom_initialsignin_btn);
 
     }
 
@@ -87,6 +98,9 @@ public class InitiateSigninActivity extends AppCompatActivity implements View.On
             case R.id.initialsignin_top_back_textview:
                 finish();
                 break;
+            case R.id.initialsignin_bottom_initialsignin_btn:
+                new Thread(runable).start();
+                break;
         }
 
     }
@@ -97,6 +111,41 @@ public class InitiateSigninActivity extends AppCompatActivity implements View.On
     public void addListener(){
         back_textview.setOnClickListener(this);
         cancel_btn.setOnClickListener(this);
+        initialsignin_btn.setOnClickListener(this);
     }
+
+    /**
+     * 发送推送
+     */
+    Runnable runable=new Runnable() {
+        @Override
+        public void run() {
+            String master_Secret = "5b7b0a004f2d3296a7593213";
+            String appKey = "48b5158a67342fb7eab0e5b4";
+
+            JPushClient jPushClient = new JPushClient(master_Secret, appKey);
+
+            PushPayload payLoad = PushPayload.newBuilder()
+                    .setPlatform(Platform.all())
+                    .setAudience(Audience.all()) //这是接收对象，即谁可以接收到该推送
+                    .setNotification(Notification.alert("收到新的签到信息")) //下发通知
+                    .setMessage(Message.content("点击进入签到页面！"))
+                    .build();
+            try {
+                PushResult result = jPushClient.sendPush(payLoad);
+                System.out.println("success");
+                System.out.println(result.msg_id);
+                System.out.println(result.sendno);
+            } catch (APIConnectionException e) {
+                // TODO Auto-generated catch block
+                System.out.println("connection error");
+                e.printStackTrace();
+            } catch (APIRequestException e) {
+                // TODO Auto-generated catch block
+                System.out.println("request error");
+                e.printStackTrace();
+            }
+        }
+    };
 
 }

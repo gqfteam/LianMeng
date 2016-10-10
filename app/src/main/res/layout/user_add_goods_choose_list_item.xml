@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/six_margin_item"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_marginLeft="@dimen/two_margin_item"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="@dimen/medium_txt_size" />
+
+        <TextView
+            android:id="@+id/add_choose_title"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/one_margin_item"
+            android:text="所在省:"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/big_txt_size" />
+    <TextView
+        android:id="@+id/add_choose_txt"
+        android:layout_width="0dp"
+        android:layout_weight="10"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/one_margin_item"
+        android:text=""
+        android:gravity="center"
+        android:textSize="@dimen/big_txt_size" />
+
+    <ImageButton
+        android:id="@+id/add_choose_img"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/one_margin_item"
+        android:gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:layout_marginRight="@dimen/three_margin_item"
+        android:src="@mipmap/takeout_bg_btn_increase_focus"/>
+
+</LinearLayout>
