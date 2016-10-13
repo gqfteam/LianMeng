@@ -203,11 +203,11 @@
             android:name=".Activity.InitiateSigninActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Activity.SchoolinfoNewListActivity"/>
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Activity.ContactActivity">
-        </activity>
-        <activity android:name=".Activity.LoginActivity">
-        </activity>
+
+        <activity android:name=".Activity.UserSaleListActivity"/>
+
+        <activity android:name=".Activity.ContactActivity"/>
+        <activity android:name=".Activity.LoginActivity"/>
         <activity android:name=".Activity.ChatActivity">
         </activity>
         <activity android:name=".Activity.SigninListActivity"/>
@@ -216,7 +216,7 @@
             android:label="@string/title_activity_add_user_goods"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Activity.UserSaleListActivity"/>
+
     </application>
 
 </manifest>

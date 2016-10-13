@@ -1,7 +1,10 @@
 package com.hkd.lianmeng.tools;
 
 import com.google.gson.Gson;
+import com.hkd.lianmeng.model.Campus;
 import com.hkd.lianmeng.model.Goods;
+import com.hkd.lianmeng.model.GoodsClassification;
+import com.hkd.lianmeng.model.GoodsSpecis;
 import com.hkd.lianmeng.model.SaleChooseModel;
 
 import org.json.JSONArray;
@@ -74,6 +77,70 @@ public class ReadJson {
             Gson gson=new Gson();
             for(int i=0;i<Goods.length();i++) {
                 Goods goods = gson.fromJson(Goods.get(i).toString(), Goods.class);
+                mGoodses.add(goods);
+            }
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return mGoodses;
+    }
+    /**
+     * 返回campus列表
+     */
+    public ArrayList<Campus> readCampusJson(String goodsJson){
+        ArrayList<Campus> mGoodses=new ArrayList<Campus>();
+        try {
+            JSONObject datas = new JSONObject(goodsJson);
+            JSONArray Goods=datas.getJSONArray("msg");
+            Gson gson=new Gson();
+            for(int i=0;i<Goods.length();i++) {
+                Campus goods = gson.fromJson(Goods.get(i).toString(), Campus.class);
+                mGoodses.add(goods);
+            }
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return mGoodses;
+    }
+    /**
+     * 返回classification列表
+     */
+    public ArrayList<GoodsClassification> readclassificationJson(String goodsJson){
+        ArrayList<GoodsClassification> mGoodses=new ArrayList<GoodsClassification>();
+        try {
+            JSONObject datas = new JSONObject(goodsJson);
+            JSONArray Goods=datas.getJSONArray("msg");
+            Gson gson=new Gson();
+            for(int i=0;i<Goods.length();i++) {
+                GoodsClassification goods = gson.fromJson(Goods.get(i).toString(), GoodsClassification.class);
+                mGoodses.add(goods);
+            }
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return mGoodses;
+    }
+    /**
+     * 返回classification列表
+     */
+    public ArrayList<GoodsSpecis> readSpecisJson(String goodsJson){
+        ArrayList<GoodsSpecis> mGoodses=new ArrayList<GoodsSpecis>();
+        try {
+            JSONObject datas = new JSONObject(goodsJson);
+            JSONArray Goods=datas.getJSONArray("msg");
+            Gson gson=new Gson();
+            for(int i=0;i<Goods.length();i++) {
+
+                GoodsSpecis goods = gson.fromJson(Goods.get(i).toString(), GoodsSpecis.class);
                 mGoodses.add(goods);
             }
 

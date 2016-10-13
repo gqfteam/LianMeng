@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.SaleListAdapter;
@@ -64,6 +65,11 @@ public class SaleListFragment extends Fragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
+
+                    if(goodsJson.contains("false")||goodsJson.contains("Failed")){
+                        Toast.makeText(getActivity(),"网络问题，查询数据失败！",Toast.LENGTH_SHORT).show();
+                        break;
+                    }
                     mReadJson=ReadJson.getInstance();
                     mGoodses=mReadJson.readGoodsJson(goodsJson);
                     mSaleListAdapter=new SaleListAdapter(getContext(),mGoodses);
@@ -75,11 +81,11 @@ public class SaleListFragment extends Fragment {
     };
     public void getJson() {
 
-        final String url = "http://192.168.1.136:8080/MFace/goodsinfo_getUsersGoodsInfo?params={%22goodscity%22:" +
-                "" +"%22"+ BaseApplication.mSearchConditions.getCity()+"%22" + ",%22goodsuniversity%22:" +
-                "" +"%22"+ BaseApplication.mSearchConditions.getUniversity()+"%22" + ",%22goodscampus%22:" +
+        final String url =  BaseApplication.HTTPCLIENTADDRESS+"goodsinfo_getUsersGoodsInfo?params={%22goodscity%22:" +
+                "" +"%22"+ BaseApplication.mSearchConditions.getCity()+"%22" + ",%22collegeName%22:" +
+                "" +"%22"+ BaseApplication.mSearchConditions.getUniversity()+"%22" + ",%22campusname%22:" +
                 "" +"%22"+ BaseApplication.mSearchConditions.getCampus()+"%22" + ",%22goodsclassification%22:" +
-                "" +"%22"+ BaseApplication.mSearchConditions.getClassification()+"%22" + ",%22goodsspecies%22:" +
+                "" +"%22"+ BaseApplication.mSearchConditions.getClassification()+"%22" + ",%22speciesname%22:" +
                 "" +"%22"+ BaseApplication.mSearchConditions.getSpecies()+"%22" +
                 "}";
         Log.i("gqf",url);
@@ -88,9 +94,9 @@ public class SaleListFragment extends Fragment {
             public void run() {
                 try {
                     goodsJson=post(url,"");
+                    Log.i("gqf",goodsJson);
                     Message message = new Message();
                     message.what = 1;
-
                     myHandler.sendMessage(message);
                 }catch (IOException  e){
                     Log.i("gqf",e.getMessage().toString());

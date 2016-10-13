@@ -1,6 +1,7 @@
 package com.hkd.lianmeng.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,8 +72,7 @@ public class SaleListAdapter extends BaseAdapter {
             mHolder = (ViewHolder) arg1.getTag();
         }
         mHolder.itemsName.setText(datas.get(arg0).getGoodsname());
-        mHolder.itemsClassification.setText(datas.get(arg0).getGoodsclassification() + "/" + datas.get(arg0).getGoodsspecies());
-
+        mHolder.itemsClassification.setText(datas.get(arg0).getGoodsclassification() + "/" + datas.get(arg0).getSpeciesname());
         mHolder.itemsMaster.setText("联系人" + datas.get(arg0).getPhone());
         mHolder.itemsPhonenumber.setText("联系电话:" + datas.get(arg0).getUserphonenum());
         mHolder.saleListItemImg.setBackground(mContext.getResources().getDrawable(R.mipmap.ic_launcher));

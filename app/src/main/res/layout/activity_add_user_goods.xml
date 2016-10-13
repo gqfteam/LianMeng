@@ -3,6 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
     <LinearLayout
@@ -32,10 +33,18 @@
             android:textColor="@color/black"
             android:textSize="@dimen/super_txt_size"
             />
-
+        <TextView
+            android:id="@+id/add_goods_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="上架"
+            android:textSize="@dimen/big_txt_size"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/two_margin_item"
+            android:textColor="@color/darkgray"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/User_allLin_lin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -112,9 +121,24 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/one_margin_item"
                         android:gravity="center"
-                        android:text="请上传至少一张物品图片:"
+                        android:text="商品价格:"
                         android:textSize="@dimen/big_txt_size"/>
-
+                    <EditText
+                        android:id="@+id/addgoods_goodsprice_edi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/five_height_item"
+                        android:layout_marginLeft="@dimen/one_margin_item"
+                        android:layout_marginRight="@dimen/one_margin_item"
+                        android:background="@drawable/initialsignin_top_search_edittext"
+                        android:gravity="left|center_vertical"
+                        android:hint="请您输入您所期望的价格"
+                        android:digits="1234567890."
+                        android:inputType="textMultiLine"
+                        android:maxLength="10"
+                        android:paddingLeft="@dimen/two_margin_item"
+                        android:singleLine="false"
+                        android:textSize="@dimen/small_txt_size"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -159,13 +183,32 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/two_margin_item">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/two_margin_item">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/medium_txt_size"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/one_margin_item"
+                            android:gravity="center"
+                            android:text="请上传至少一张物品图片:"
+                            android:textSize="@dimen/big_txt_size"/>
+
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/addgoods_addImg_txt"
@@ -176,6 +219,8 @@
                         android:paddingLeft="@dimen/two_margin_item"
                         android:paddingRight="@dimen/two_margin_item"
                         android:paddingTop="@dimen/one_margin_item"
+                        android:layout_gravity="center"
+
                         android:text="添加图片"
                         android:textColor="@color/white"
                         android:textSize="@dimen/minimum_txt_size"/>
@@ -190,6 +235,7 @@
                         android:paddingLeft="@dimen/two_margin_item"
                         android:paddingRight="@dimen/two_margin_item"
                         android:paddingTop="@dimen/one_margin_item"
+                        android:layout_gravity="center"
                         android:text="删除图片"
                         android:textColor="@color/white"
                         android:textSize="@dimen/minimum_txt_size"/>
@@ -294,6 +340,13 @@
                         android:gravity="center"
                         android:text="所在地:"
                         android:textSize="@dimen/big_txt_size"/>
+                    <TextView
+                        android:id="@+id/addgoods_goodsaddress_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/one_margin_item"
+                        android:gravity="center"
+                        android:textSize="@dimen/small_txt_size"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/addgoods_goodsclassification_lin"
@@ -316,6 +369,13 @@
                         android:layout_marginLeft="@dimen/one_margin_item"
                         android:gravity="center"
                         android:text="商品分类:"
+                        android:textSize="@dimen/small_txt_size"/>
+                    <TextView
+                        android:id="@+id/addgoods_goodsclassification_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/one_margin_item"
+                        android:gravity="center"
                         android:textSize="@dimen/big_txt_size"/>
                 </LinearLayout>
                 <View
@@ -326,7 +386,7 @@
         </ScrollView>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </LinearLayout>

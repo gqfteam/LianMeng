@@ -5,9 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.hyphenate.easeui.controller.EaseUI;
 import com.hkd.lianmeng.model.LoginUser;
 import com.hkd.lianmeng.model.SearchConditions;
 import com.hkd.lianmeng.model.User;
@@ -17,6 +15,7 @@ import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
+import com.hyphenate.easeui.controller.EaseUI;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.cookie.CookieJarImpl;
 import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
@@ -38,6 +37,8 @@ import okhttp3.OkHttpClient;
 public class BaseApplication extends Application {
 
     public static Context applicationContext;
+    public static final String HTTPCLIENTADDRESS="http://192.168.56.1:8080/MFaceService/";
+
     //public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
     public static boolean isLogin=false;
     public static SearchConditions mSearchConditions;
@@ -58,7 +59,6 @@ public class BaseApplication extends Application {
         //我们项目与极光推送的一些链接的一些状态
         JPushInterface.setDebugMode(true);
         //初始化代码
-        Toast.makeText(this,"aaaaa",Toast.LENGTH_LONG).show();
         JPushInterface.init(this);
        /*
        * 极光推送设置结束
@@ -188,6 +188,7 @@ public class BaseApplication extends Application {
         //EMClient.getInstance().logout(true);
         super.onTerminate();
     }
+
     /**
      * 退出登录,清空数据
      */
@@ -196,8 +197,6 @@ public class BaseApplication extends Application {
         //hxSDKHelper.logout(emCallBack);
         EMClient.getInstance().chatManager().removeMessageListener(msgListener);
     }
-
-
 
     /**
      * 读取登录信息，判断是否登录过

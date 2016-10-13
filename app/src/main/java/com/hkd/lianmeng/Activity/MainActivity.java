@@ -25,7 +25,7 @@ import butterknife.OnClick;
  */
 
 
-public class MainActivity extends FragmentActivity implements SaleFragemnt.mListener{
+public class MainActivity extends FragmentActivity implements SaleFragemnt.mListener,ToolsFragment.mListener{
 
     @Bind(R.id.Main_bottom_HomePage_Rad)
     RadioButton MainBottomHomePageRad;
@@ -117,6 +117,8 @@ public class MainActivity extends FragmentActivity implements SaleFragemnt.mList
 
                 mIntent.setClass(MainActivity.this, LoginActivity.class);
             }
+        }else if(activityClass==UserSaleListActivity.class){
+            mIntent.setClass(MainActivity.this, UserSaleListActivity.class);
         }
         startActivity(mIntent);
     }

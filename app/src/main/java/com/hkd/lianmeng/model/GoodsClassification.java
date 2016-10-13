@@ -6,21 +6,17 @@ package com.hkd.lianmeng.model;
 
 public class GoodsClassification {
     int id;
-    String ClassificationId;
-
+    String goodsclassification;
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getClassificationId() {
-        return ClassificationId;
+    public String getGoodsclassification() {
+        return goodsclassification;
     }
-
-    public void setClassificationId(String classificationId) {
-        ClassificationId = classificationId;
+    public void setGoodsclassification(String goodsclassification) {
+        this.goodsclassification = goodsclassification;
     }
 }

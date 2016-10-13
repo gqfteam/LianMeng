@@ -6,30 +6,24 @@ package com.hkd.lianmeng.model;
 
 public class GoodsSpecis {
     int id;
-    int ClassificationId;
-    String SpecisName;
-
+    String speciesname;
+    int classificationid;
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getSpecisName() {
-        return SpecisName;
+    public String getSpeciesname() {
+        return speciesname;
     }
-
-    public void setSpecisName(String specisName) {
-        SpecisName = specisName;
+    public void setSpeciesname(String speciesname) {
+        this.speciesname = speciesname;
     }
-
-    public int getClassificationId() {
-        return ClassificationId;
+    public int getClassificationid() {
+        return classificationid;
     }
-
-    public void setClassificationId(int classificationId) {
-        ClassificationId = classificationId;
+    public void setClassificationid(int classificationid) {
+        this.classificationid = classificationid;
     }
 }
