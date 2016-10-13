@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.hkd.lianmeng.Activity.ChatActivity;
 import com.hkd.lianmeng.R;
 import com.hkd.lianmeng.adapter.MsgListAdapter;
@@ -55,7 +56,7 @@ public class MsgListFragment extends Fragment {
             public void run() {
                 try {
                     conversations = EMClient.getInstance().chatManager().getAllConversations();
-                    Log.i("wjd","conversations.size():"+conversations.size());
+//                    Log.i("wjd","conversations.size():"+conversations.size());
 
                 } catch (Exception e) {
                 }
@@ -71,6 +72,9 @@ public class MsgListFragment extends Fragment {
 
         return view;
     }
+
+
+
 
     Handler myHandler = new Handler() {
         public void handleMessage(Message msg) {

@@ -21,12 +21,19 @@ import com.zhy.http.okhttp.cookie.CookieJarImpl;
 import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
 import com.zhy.http.okhttp.https.HttpsUtils;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import cn.jpush.android.api.JPushInterface;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 /**
@@ -64,7 +71,13 @@ public class BaseApplication extends Application {
        * 极光推送设置结束
        */
 
+
+
+
+
     }
+
+
     /**
      * 初始化okhttp
      */
@@ -118,6 +131,35 @@ public class BaseApplication extends Application {
         //判断用户是否登录过
         isLogin();
 
+        /**
+         * 在接收信息监听事件中保存信息
+         */
+//        //创建okHttpClient对象
+//        OkHttpClient mOkHttpClient = new OkHttpClient();
+//        //创建一个Request
+////        Log.i("Daniel","aaaaaaaaaaaaaaa"+rName+sName+msgContent+"http://docs.easemob.com/im/start？params={\"1\":\"2\"}");
+//
+//        final Request request = new Request.Builder()
+////                .url("http://192.168.1.127:8080/MFaceService/ChatMessageAction_addChatMessage?params={\"sName\":\"daniel\",\"rName\":\"wgc\",\"msgContent\":\"hello\"}")
+//                .url("http://192.168.1.127:8080/MFaceService/ChatMessageAction_addChatMessage?params={%22sName%22:%22daniel%22,%22rName%22:%22wgc%22,%22msgContent%22:%22hello%22}")
+//                .build();
+//        //new call
+//        Call call = mOkHttpClient.newCall(request);
+//        //请求加入调度
+//        call.enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                Log.i("Daniel","无监听请求成功");
+//
+//            }
+//        });
+//        getMsg();
+
 
 
 
@@ -127,33 +169,73 @@ public class BaseApplication extends Application {
     private  void getMsg(){
         EMClient.getInstance().chatManager().addMessageListener(msgListener);
         msgListener = new EMMessageListener() {
-
             @Override
             public void onMessageReceived(List<EMMessage> messages) {
                 //收到消息
-                Log.i("gqf","aaaaaaaaaaaaaaagqf"+messages.size());
+                Log.i("Daniel","消息");
+                Log.i("Daniel","aaaaaaaaaaaaaaa:"+messages.size());
+                for (EMMessage msg:messages){
+                    saveChatMsg(msg.getUserName(),msg.getUserName(),msg.getBody().toString());
+                }
+
             }
 
             @Override
             public void onCmdMessageReceived(List<EMMessage> messages) {
                 //收到透传消息
+                Log.i("Daniel","收到透传消息");
             }
 
             @Override
             public void onMessageReadAckReceived(List<EMMessage> messages) {
                 //收到已读回执
+                Log.i("Daniel","收到已读回执");
             }
 
             @Override
             public void onMessageDeliveryAckReceived(List<EMMessage> message) {
                 //收到已送达回执
+                Log.i("Daniel","收到已送达回执");
             }
 
             @Override
             public void onMessageChanged(EMMessage message, Object change) {
                 //消息状态变动
+                Log.i("Daniel","消息状态变动");
             }
         };
+
+    }
+
+    private void saveChatMsg(final String rName, final String sName, final String msgContent){
+
+                //创建okHttpClient对象
+                OkHttpClient mOkHttpClient = new OkHttpClient();
+                //创建一个Request
+                Log.i("Daniel","aaaaaaaaaaaaaaa:"+rName+sName+msgContent);
+                RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "");
+
+            final Request request = new Request.Builder()
+                    .url("http://192.168.1.127:8080/MFaceService/ChatMessageAction_addChatMessage?params={%22sName%22:%22daniel%22,%22rName%22:%22wgc%22,%22msgContent%22:%22hello%22}")
+//                        .url("http://192.168.1.127:8080/MFaceService/ChatMessageAction_addChatMessage?params={%22sName%22:%22"+sName+"%22,%22rName%22:%22"+rName+"%22,%22msgContent%22:%22"+msgContent+"%22}")
+                        .post(body)
+                        .build();
+                //new call
+                Call call = mOkHttpClient.newCall(request);
+                //请求加入调度
+                call.enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        Log.i("Daniel","有监听请求成功！");
+
+                    }
+                });
+
     }
     private String getAppName(int pID) {
         String processName = null;
