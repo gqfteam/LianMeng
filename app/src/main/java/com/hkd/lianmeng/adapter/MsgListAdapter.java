@@ -78,7 +78,7 @@ public class MsgListAdapter extends BaseAdapter {
         if(datas.size()!=0){
 
             EMMessageBody eb = datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getBody();
-            mHolder.msgListItemMsg.setText(eb.toString());
+            mHolder.msgListItemMsg.setText(eb.toString().substring(5,eb.toString().length()-1));
             String time = mDemoHelper.getTimeLongToString(datas.get(arg0).getMessages().get(datas.get(arg0).getMessages().size() - 1).getMsgTime());
             mHolder.msgListItemTime.setText(time);
         }
