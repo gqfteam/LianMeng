@@ -53,11 +53,13 @@ public class BaseApplication extends Application {
     private LoginUserInfoUtils mLoginUserInfoUtils;
     @Override
     public void onCreate() {
+//        Log.i("ddddd","eeeee");
         super.onCreate();
         applicationContext = this;
         mSearchConditions=new SearchConditions();
         initHuanXinParams();
         initOkHttp();
+
 
         /*
         * 柳亚婷  极光推送
