@@ -111,15 +111,19 @@ public class MainActivity extends FragmentActivity implements SaleFragemnt.mList
         mIntent=new Intent();
         if(activityClass==ContactActivity.class){
             //判断是否登录
-            if(BaseApplication.isLogin){
-                mIntent.setClass(MainActivity.this,activityClass);
-            }else {
+           /* if(BaseApplication.isLogin){*/
+            mIntent.setClass(MainActivity.this,activityClass);
+           /* }else {
 
                 mIntent.setClass(MainActivity.this, LoginActivity.class);
-            }
+            }*/
         }else if(activityClass==UserSaleListActivity.class){
             mIntent.setClass(MainActivity.this, UserSaleListActivity.class);
         }
+        if(activityClass==InitiateSigninActivity.class){
+            mIntent.setClass(MainActivity.this,activityClass);
+        }
+
         startActivity(mIntent);
     }
 }

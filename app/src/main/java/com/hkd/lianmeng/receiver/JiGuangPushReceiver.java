@@ -23,7 +23,7 @@ public class JiGuangPushReceiver extends BroadcastReceiver {
             String title=bundle.getString(JPushInterface.EXTRA_TITLE);
             String message=bundle.getString(JPushInterface.EXTRA_MESSAGE);
 
-            Toast.makeText(context,"Message title:"+title+" context:"+message,Toast.LENGTH_LONG).show();
+//            Toast.makeText(context,"Message title:"+title+" context:"+message,Toast.LENGTH_LONG).show();
         }
         else if(intent.getAction().equals((JPushInterface.ACTION_NOTIFICATION_OPENED))){
             System.out.println("用户点击打开了通知");
